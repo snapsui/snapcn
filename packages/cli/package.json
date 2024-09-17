@@ -20,8 +20,8 @@
   "exports": "./dist/index.js",
   "bin": "./dist/index.js",
   "scripts": {
-    "dev": "tsup --watch --env.COMPONENTS_REGISTRY_URL http://localhost:3000 --env.PRO_REGISTRY_URL http://localhost:3001",
-    "build": "tsup --env.COMPONENTS_REGISTRY_URL https://magicui.design --env.PRO_REGISTRY_URL https://pro.magicui.design --env.POSTHOG_API_KEY $POSTHOG_API_KEY",
+    "dev": "tsup --watch --env.COMPONENTS_REGISTRY_URL http://localhost:3000",
+    "build": "tsup --env.COMPONENTS_REGISTRY_URL https://snapcn.netlify.app/",
     "typecheck": "tsc --noEmit",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",

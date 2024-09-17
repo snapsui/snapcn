@@ -24,8 +24,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile # Installs dependencies using pnpm
 
+      - name: Install CLI dependencies
+        run: pnpm run install:cli
+
       - name: Build package
-        run: pnpm run build # Compiles code to the dist folder
+        run: pnpm run build:cli # Compiles code to the dist folder
         env:
           NEXT_PUBLIC_APP_URL: ${{ secrets.NEXT_PUBLIC_APP_URL }}
 
