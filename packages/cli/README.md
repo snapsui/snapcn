@@ -1,17 +1,4 @@
-# magicui
-
-A CLI for adding magic ui components to your project. Superset of shadcn-ui.
-
-```bash
- ##   ##                      ##                  ##   ##   ####
- ### ###                                          ##   ##    ##
- #######   ####     ### ##   ###      ####        ##   ##    ##
- #######      ##   ##  ##     ##     ##  ##       ##   ##    ##
- ## # ##   #####   ##  ##     ##     ##           ##   ##    ##
- ##   ##  ##  ##    #####     ##     ##  ##       ##   ##    ##
- ##   ##   #####       ##    ####     ####         #####    ####
-                   #####
-```
+# snap ui
 
 ## Usage
 
@@ -20,12 +7,12 @@ Use the `init` command to initialize dependencies for a new project.
 The `init` command installs dependencies (`framer-motion`), adds the `cn` util, configures `tailwind.config.js`, and CSS variables for the project.
 
 ```bash
-npx magicui-cli init
+npx snapcn init
 ```
 
 ### shadcn-ui project
 
-If your project is already using the `shadcn-ui`, don't worry! You can still use magicui.
+If your project is already using the `shadcn-ui`, don't worry! You can still use snapui.
 
 ```bash
 npx shadcn-ui init
@@ -61,31 +48,26 @@ Use the `add` command to add components to your project.
 The `add` command adds a component to your project and installs all required dependencies.
 
 ```bash
-npx magicui-cli add [component]
-```
-
-### Example
-
-```bash
-npx magicui-cli add bento-grid
+npx snapcn add [component]
 ```
 
 You can also use the optional `--all` flag to install all components:
 
 ```bash
-npx magicui-cli add --all
+npx snapcn add --all
 ```
 
 You can also use the `--exmaple` flag to select and install example & demo you saw on webside:
 
 ```bash
-npx magicui-cli add --example
+npx snapcn add --example
 ```
 
 You can also run the command without any arguments to view a list of all available components:
 
 ```bash
-npx magicui-cli add
+
+npx snapcn add
 ```
 
 ## shadcn-ui
@@ -93,17 +75,9 @@ npx magicui-cli add
 You can also use the same CLI for selecting & installing shadcn-ui components:
 
 ```bash
-npx magicui-cli add --shadcn button
+npx snapcn add --shadcn button
 ```
 
 ```bash
-npx magicui-cli add --shadcn --all
+npx snapcn add --shadcn --all
 ```
-
-## Documentation
-
-Visit [https://magicui.design/docs/installation](https://magicui.design/docs/installation) to view the documentation.
-
-## License
-
-Licensed under the [MIT license](https://github.com/magicuidesign/magicui/blob/main/LICENSE.md).
