@@ -1,6 +1,6 @@
 {
   "name": "snapcn",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Add snap ui components to your apps.",
   "license": "MIT",
   "files": [
@@ -22,7 +22,7 @@
   "exports": "./dist/index.js",
   "bin": "./dist/index.js",
   "scripts": {
-    "dev": "tsup --watch --env.COMPONENTS_REGISTRY_URL http://localhost:3000",
+    "dev": "tsup --watch --env.COMPONENTS_REGISTRY_URL https://snapcn.netlify.app/",
     "build": "tsup --env.COMPONENTS_REGISTRY_URL https://snapcn.netlify.app/",
     "typecheck": "tsc --noEmit",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",

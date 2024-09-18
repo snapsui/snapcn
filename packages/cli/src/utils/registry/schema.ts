@@ -12,6 +12,7 @@ export const registryItemSchema = z.object({
     "components:component",
     "components:example",
     "components:snapui",
+    "components:magicui",
     "components:blocks",
   ]),
 });

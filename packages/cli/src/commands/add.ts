@@ -28,7 +28,7 @@ const addOptionsSchema = z.object({
   overwrite: z.boolean(),
   cwd: z.string(),
   all: z.boolean(),
-  pro: z.boolean(),
+  pro: z.boolean().optional(),
   example: z.boolean(),
   shadcn: z.boolean(),
   path: z.string().optional(),
@@ -74,8 +74,9 @@ export const add = new Command()
       }
 
       const registryIndex = !options.shadcn
-        ? await getRegistryIndexSnapUI(options.pro)
+        ? await getRegistryIndexSnapUI()
         : [];
+
       const shadcnRegistryIndex = await getRegistryIndexShadcn();
 
       let selectedComponents = options.all

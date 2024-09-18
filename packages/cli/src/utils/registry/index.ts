@@ -21,7 +21,7 @@ const agent = process.env.https_proxy
   ? new HttpsProxyAgent(process.env.https_proxy)
   : undefined;
 
-export async function getRegistryIndexSnapUI(env?: boolean) {
+export async function getRegistryIndexSnapUI() {
   try {
     const [result] = await fetchRegistry(["index.json"], baseUrl);
     // @ts-ignore
@@ -106,11 +106,13 @@ export async function resolveTreeWithShadcn(
 
       if (!entry) {
         const newName = name.split(":")[1];
-        const shadcnEntry = shadcnIndex.find((e) => e.name === newName);
+        const paramName = newName ?? name;
+        const shadcnEntry = shadcnIndex.find((e) => e.name === paramName);
 
         if (!shadcnEntry) {
           continue;
         }
+
         shadcnTree.push(shadcnEntry);
 
         if (shadcnEntry.registryDependencies) {
