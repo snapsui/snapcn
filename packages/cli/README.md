@@ -1,24 +1,28 @@
-# snap ui
+# Snap UI
+
+### Introduction
+
+Snap UI is a customizable component library designed to work seamlessly with Tailwind CSS and can easily integrate with other libraries like `shadcn-ui`. It offers a simple way to add powerful, pre-designed components to your project, along with animations and utilities, while keeping your codebase minimal and maintainable.
 
 ## Usage
 
-Use the `init` command to initialize dependencies for a new project.
+Initialize your project with the `init` command to set up necessary dependencies and configurations.
 
-The `init` command installs dependencies (`framer-motion`), adds the `cn` util, configures `tailwind.config.js`, and CSS variables for the project.
+Running the `init` command installs essential packages (`framer-motion`), adds the `cn` utility, sets up the `tailwind.config.js`, file, and applies CSS variables for the project.
 
 ```bash
 npx snapcn init
 ```
 
-### shadcn-ui project
+### Using with shadcn-ui
 
-If your project is already using the `shadcn-ui`, don't worry! You can still use snapui.
+If you're already using `shadcn-ui`, no problem! You can seamlessly integrate Snap UI into your project.
 
 ```bash
 npx shadcn-ui init
 ```
 
-Just add these two lines to your `components.json` file:
+To make Snap UI work, simply add the following two lines in your `components.json`:
 
 ```diff
 {
@@ -41,43 +45,49 @@ Just add these two lines to your `components.json` file:
 }
 ```
 
-## add
+## Adding Components
 
-Use the `add` command to add components to your project.
+To add components to your project, use the `add` command.
 
-The `add` command adds a component to your project and installs all required dependencies.
+This command adds the specified component and installs any necessary dependencies.
 
 ```bash
 npx snapcn add [component]
 ```
 
-You can also use the optional `--all` flag to install all components:
+To install all available components at once, you can use the `--all` option:
 
 ```bash
 npx snapcn add --all
 ```
 
-You can also use the `--exmaple` flag to select and install example & demo you saw on webside:
+If you want to install example components or demos from the website, use the `--exmaple` flag:
 
 ```bash
 npx snapcn add --example
 ```
 
-You can also run the command without any arguments to view a list of all available components:
+Running the command without any arguments will display a list of all available components:
 
 ```bash
 
 npx snapcn add
 ```
 
-## shadcn-ui
+## shadcn-ui Integration
 
-You can also use the same CLI for selecting & installing shadcn-ui components:
+You can also use the Snap UI CLI to select and install components from `shadcn-ui`:
 
 ```bash
 npx snapcn add --shadcn button
 ```
 
+Or, to install all shadcn-ui components, use:
+
 ```bash
 npx snapcn add --shadcn --all
 ```
+
+## Customization
+
+Snap UI components are designed to be flexible. You can extend or override styles using Tailwind CSS or custom CSS to fit your project’s design requirements. You can also modify the component behavior with your own logic.

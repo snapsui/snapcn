@@ -5,7 +5,6 @@ import { getConfig } from "@/src/utils/get-config";
 import { getPackageManager } from "@/src/utils/get-package-manager";
 import { handleError } from "@/src/utils/handle-error";
 import { logger } from "@/src/utils/logger";
-import { posthog } from "@/src/utils/posthog";
 import {
   fetchTree,
   fetchTreeFromShadcn,
@@ -272,16 +271,6 @@ export const add = new Command()
           }
         }
       }
-
-      posthog.capture({
-        event: "cli_add",
-        distinctId: generateDistinctId(),
-        properties: {
-          components: selectedComponents,
-          style: config.style,
-          baseColor: config.tailwind.baseColor,
-        },
-      });
 
       spinner.succeed(`Done.`);
     } catch (error) {

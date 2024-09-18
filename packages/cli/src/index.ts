@@ -1,18 +1,15 @@
 #!/usr/bin/env node
 import { add } from "@/src/commands/add";
 import { init } from "@/src/commands/init";
-import { posthog } from "@/src/utils/posthog";
 import { Command } from "commander";
 
 import { getPackageInfo } from "./utils/get-package-info";
 
 process.on("SIGINT", async () => {
-  await posthog.shutdown();
   process.exit(0);
 });
 
 process.on("SIGTERM", async () => {
-  await posthog.shutdown();
   process.exit(0);
 });
 

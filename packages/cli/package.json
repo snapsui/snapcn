@@ -1,6 +1,6 @@
 {
   "name": "snapcn",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Add snap ui components to your apps.",
   "license": "MIT",
   "files": [
@@ -12,8 +12,10 @@
     "tailwind",
     "radix-ui",
     "shadcn",
-    "magic-ui",
-    "magicui",
+    "snap-ui",
+    "sanpcn",
+    "sanpui",
+    "sanp-cn",
     "framer-motion"
   ],
   "type": "module",
