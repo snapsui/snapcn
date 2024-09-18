@@ -11,8 +11,8 @@ import { HttpsProxyAgent } from "https-proxy-agent";
 import fetch from "node-fetch";
 import { z } from "zod";
 
-const baseUrl = process.env.COMPONENTS_REGISTRY_URL ?? "https://magicui.design";
-const proBaseUrl = process.env.PRO_REGISTRY_URL ?? "https://pro.magicui.design";
+const baseUrl =
+  process.env.COMPONENTS_REGISTRY_URL ?? "https://snapcn.netlify.app";
 const shadcnBaseUrl = "https://ui.shadcn.com";
 
 type theTree = z.infer<typeof registryIndexSchema>;
@@ -21,18 +21,14 @@ const agent = process.env.https_proxy
   ? new HttpsProxyAgent(process.env.https_proxy)
   : undefined;
 
-export async function getRegistryIndexMagicUI(env?: boolean) {
+export async function getRegistryIndexSnapUI(env?: boolean) {
   try {
     const [result] = await fetchRegistry(["index.json"], baseUrl);
-    const [resultPro] = env
-      ? await fetchRegistry(["index.json"], proBaseUrl)
-      : [[]];
-
     // @ts-ignore
-    return registryIndexSchema.parse([...result, ...resultPro]);
+    return registryIndexSchema.parse([...result]);
   } catch (error) {
     console.error(error);
-    throw new Error("Failed to fetch components from Magic UI registry.");
+    throw new Error("Failed to fetch components from Snap UI registry.");
   }
 }
 
@@ -100,9 +96,9 @@ export async function resolveTreeWithShadcn(
   index: theTree,
   names: string[],
   calledByShadcn = false,
-): Promise<{ shadcnTree: theTree; magicuiTree: theTree }> {
+): Promise<{ shadcnTree: theTree; snapuiTree: theTree }> {
   const shadcnTree: theTree = [];
-  const magicuiTree: theTree = [];
+  const snapuiTree: theTree = [];
 
   for (const name of names) {
     if (!calledByShadcn) {
@@ -129,11 +125,11 @@ export async function resolveTreeWithShadcn(
         }
       }
 
-      entry && magicuiTree.push(entry);
+      entry && snapuiTree.push(entry);
 
       if (entry && entry.registryDependencies) {
         const {
-          magicuiTree: magicuiTreeDependencies,
+          snapuiTree: snapuiTreeDependencies,
           shadcnTree: shadcnTreeDependencies,
         } = await resolveTreeWithShadcn(
           shadcnIndex,
@@ -142,7 +138,7 @@ export async function resolveTreeWithShadcn(
           false,
         );
         shadcnTree.push(...shadcnTreeDependencies);
-        magicuiTree.push(...magicuiTreeDependencies);
+        snapuiTree.push(...snapuiTreeDependencies);
       }
     } else {
       const entry = shadcnIndex.find((e) => e.name === name);
@@ -171,7 +167,7 @@ export async function resolveTreeWithShadcn(
       (component, index, self) =>
         self.findIndex((c) => c.name === component.name) === index,
     ),
-    magicuiTree: magicuiTree.filter(
+    snapuiTree: snapuiTree.filter(
       (component, index, self) =>
         self.findIndex((c) => c.name === component.name) === index,
     ),
@@ -205,23 +201,16 @@ export async function resolveTree(index: theTree, names: string[]) {
 export async function fetchTree(tree: theTree, env?: string) {
   try {
     const treeNormal = tree.filter((item) => !item.type.includes("blocks"));
-    const treePro = tree.filter((item) => item.type.includes("blocks"));
-    // {baseUrl}/registry/components/magicui/[name].json.
+    // {baseUrl}/registry/components/snapui/[name].json.
     const paths = treeNormal.map((item) => {
       const [parent, subfolder] = item.type.split(":");
       return `${parent}/${subfolder}/${item.name}.json`;
     });
     const result = await fetchRegistry(paths, baseUrl);
 
-    const pathsPro = treePro.map((item) => {
-      const [parent, subfolder] = item.type.split(":");
-      return `${parent}/${subfolder}/${item.name}.json`;
-    });
-    const resultPro = await fetchRegistry(pathsPro, proBaseUrl, env);
-
-    return registryWithContentSchema.parse([...result, ...resultPro]);
+    return registryWithContentSchema.parse([...result]);
   } catch (error) {
-    throw new Error(`Failed to fetch tree from Magic UI registry.`);
+    throw new Error(`Failed to fetch tree from Snap UI registry.`);
   }
 }
 
@@ -269,7 +258,7 @@ async function fetchRegistry(
           headers: env
             ? {
                 // the Pro registry route will valid this env cookie
-                cookie: `x-magicui-env=${env}`,
+                cookie: `x-snapui-env=${env}`,
               }
             : {},
         });

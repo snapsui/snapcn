@@ -2,8 +2,6 @@ import { createWriteStream } from "node:fs";
 import { Readable } from "node:stream";
 import { z } from "zod";
 
-import { logger } from "./logger";
-
 const baseUrl = process.env.PRO_REGISTRY_URL ?? "https://pro.magicui.design";
 
 const projectTemplatesSchema = z.object({

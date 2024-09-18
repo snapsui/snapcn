@@ -3,6 +3,11 @@ import * as React from "react";
 import { Registry } from "@/registry/schema";
 
 const ui: Registry = {
+  "snap-card": {
+    name: "snap-card",
+    type: "components:snapui",
+    files: ["registry/components/snapui/snap-card.tsx"],
+  },
   "magic-card": {
     name: "magic-card",
     type: "components:magicui",
@@ -997,6 +1002,7 @@ const example: Registry = {
     ),
   },
 };
+
 export const registry: Registry = {
   ...ui,
   ...example,
@@ -1006,10 +1012,12 @@ const resolvedExamples = Object.entries(example).map(([key, value]) => ({
   ...value,
   component: () => void 0,
 }));
+
 const updatedExample: Registry = resolvedExamples.reduce(
   (acc, curr) => ({ ...acc, [curr.name]: curr }),
   {},
 );
+
 export const downloadRegistry: Registry = { ...ui, ...updatedExample };
 
 export type ComponentName = keyof (typeof ui & typeof example);

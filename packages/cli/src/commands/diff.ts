@@ -8,8 +8,8 @@ import {
   fetchTreeFromShadcn,
   getItemTargetPath,
   getRegistryBaseColor,
-  getRegistryIndexMagicUI,
   getRegistryIndexShadcn,
+  getRegistryIndexSnapUI,
 } from "@/src/utils/registry";
 import { registryIndexSchema } from "@/src/utils/registry/schema";
 import { transform } from "@/src/utils/transformers";
@@ -59,7 +59,7 @@ export const diff = new Command()
         process.exit(1);
       }
 
-      const registryIndex = await getRegistryIndexMagicUI();
+      const registryIndex = await getRegistryIndexSnapUI();
       const shadcnRegistryIndex = await getRegistryIndexShadcn();
 
       if (!options.component) {
@@ -118,7 +118,7 @@ export const diff = new Command()
         }
 
         if (!componentsWithUpdates.length) {
-          logger.info("No updates found on Magic UI.");
+          logger.info("No updates found on Snap UI.");
         }
 
         if (!componentsShadcnWithUpdates.length) {

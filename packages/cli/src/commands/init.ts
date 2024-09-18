@@ -213,7 +213,7 @@ export async function promptForConfig(
       utils: options.utils,
       components: options.components,
       ui: `${options.components}/ui`,
-      magicui: `${options.components}/magicui`,
+      snapui: `${options.components}/snapui`,
     },
   });
 

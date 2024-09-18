@@ -1,7 +1,7 @@
 import Configstore from "configstore";
 
-const envName = "MAGICUI_PRO_ENV";
-const config = new Configstore("magicui");
+const envName = "SNAPUI_PRO_ENV";
+const config = new Configstore("snapui");
 
 export const getEnv = () => config.get(envName) as string | undefined;
 export const setEnv = (env: string) => config.set(envName, env);

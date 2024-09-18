@@ -2,25 +2,17 @@ import { existsSync, promises as fs } from "fs";
 import path from "path";
 import { generateDistinctId } from "@/src/utils/distinct-id";
 import { getConfig } from "@/src/utils/get-config";
-import { getEnv } from "@/src/utils/get-env";
 import { getPackageManager } from "@/src/utils/get-package-manager";
 import { handleError } from "@/src/utils/handle-error";
-import {
-  ASCII_PRO,
-  ASCII_TEXT,
-  ColorFullText,
-  hasPro,
-  logger,
-  tryPro,
-} from "@/src/utils/logger";
+import { logger } from "@/src/utils/logger";
 import { posthog } from "@/src/utils/posthog";
 import {
   fetchTree,
   fetchTreeFromShadcn,
   getItemTargetPath,
   getRegistryBaseColor,
-  getRegistryIndexMagicUI,
   getRegistryIndexShadcn,
+  getRegistryIndexSnapUI,
   resolveTreeWithShadcn,
 } from "@/src/utils/registry";
 import { transform } from "@/src/utils/transformers";
@@ -43,8 +35,6 @@ const addOptionsSchema = z.object({
   path: z.string().optional(),
 });
 
-const MAGICUI_PRO_ENV = getEnv();
-
 export const add = new Command()
   .name("add")
   .description("Add ui components to your project")
@@ -57,20 +47,10 @@ export const add = new Command()
     process.cwd(),
   )
   .option("-a, --all", "add all available components", false)
-  .option(
-    "-m, --pro",
-    "include pro magic-ui blocks & components (make sure to add your secret .env)",
-    false,
-  )
-  .addHelpText("after", ColorFullText(MAGICUI_PRO_ENV ? hasPro : tryPro))
   .option("-e, --example", "include available examples & demos", false)
   .option("-s, --shadcn", "include available components from shadcn-ui", false)
   .option("-p, --path <path>", "the path to add the component to.")
   .action(async (components, opts) => {
-    console.log(
-      MAGICUI_PRO_ENV ? ASCII_PRO : ASCII_TEXT,
-      ColorFullText(!MAGICUI_PRO_ENV ? tryPro : hasPro),
-    );
     try {
       const options = addOptionsSchema.parse({
         components,
@@ -94,13 +74,8 @@ export const add = new Command()
         process.exit(1);
       }
 
-      if (options.pro && !MAGICUI_PRO_ENV) {
-        logger.warn("You're not authenticated to add Magic UI Pro components");
-        return;
-      }
-
       const registryIndex = !options.shadcn
-        ? await getRegistryIndexMagicUI(options.pro)
+        ? await getRegistryIndexSnapUI(options.pro)
         : [];
       const shadcnRegistryIndex = await getRegistryIndexShadcn();
 
@@ -118,7 +93,7 @@ export const add = new Command()
 
             if (options.example) return type === "example";
 
-            return type === "magicui";
+            return type === "snapui";
           });
 
         const multiselectChoice = options.shadcn
@@ -147,28 +122,28 @@ export const add = new Command()
       }
 
       // const tree = await resolveTree(registryIndex, selectedComponents)
-      const { magicuiTree, shadcnTree } = await resolveTreeWithShadcn(
+      const { snapuiTree, shadcnTree } = await resolveTreeWithShadcn(
         shadcnRegistryIndex,
         registryIndex,
         selectedComponents,
         options.shadcn,
       );
 
-      const magicuiPayload = await fetchTree(magicuiTree, MAGICUI_PRO_ENV);
+      const snapuiPayload = await fetchTree(snapuiTree);
       const shadcnPayload = await fetchTreeFromShadcn(config.style, shadcnTree);
       const baseColor = await getRegistryBaseColor(config.tailwind.baseColor);
 
-      if (!magicuiPayload.length && !shadcnPayload.length) {
+      if (!snapuiPayload.length && !shadcnPayload.length) {
         logger.warn("Selected components not found. Exiting.");
         process.exit(0);
       } else {
-        magicuiPayload.length !== 0 &&
-          logger.info(`Found ${magicuiPayload.length}x Magic UI components.`);
+        snapuiPayload.length !== 0 &&
+          logger.info(`Found ${snapuiPayload.length}x Magic UI components.`);
         shadcnPayload.length !== 0 &&
           logger.info(`Found ${shadcnPayload.length}x Shadcn UI components.`);
       }
 
-      const totalPayload = [...magicuiPayload, ...shadcnPayload];
+      const totalPayload = [...snapuiPayload, ...shadcnPayload];
 
       if (!options.yes) {
         const { proceed } = await prompts({
