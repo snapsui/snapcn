@@ -28,6 +28,7 @@ export function MainNav() {
             href={item.href!}
             onClick={() => item.event && posthog.capture(item.event)}
             target={item.external ? "_blank" : undefined}
+            aria-label={item.title}
             className={cn(
               "flex items-center justify-center transition-colors hover:text-foreground/80",
               pathname?.startsWith(item.href!)

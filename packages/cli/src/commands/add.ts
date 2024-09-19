@@ -130,6 +130,9 @@ export const add = new Command()
       );
 
       const snapuiPayload = await fetchTree(snapuiTree);
+
+      console.log(snapuiPayload);
+
       const shadcnPayload = await fetchTreeFromShadcn(config.style, shadcnTree);
       const baseColor = await getRegistryBaseColor(config.tailwind.baseColor);
 

@@ -3,10 +3,10 @@ import * as React from "react";
 import { Registry } from "@/registry/schema";
 
 const ui: Registry = {
-  "snap-card": {
-    name: "snap-card",
+  "snap-input": {
+    name: "snap-input",
     type: "components:snapui",
-    files: ["registry/components/snapui/snap-card.tsx"],
+    files: ["registry/components/snapui/snap-input.tsx"],
   },
   "magic-card": {
     name: "magic-card",
