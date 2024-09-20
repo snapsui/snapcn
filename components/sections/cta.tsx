@@ -26,7 +26,7 @@ export default function CTASection() {
                 "group mt-4 rounded-[2rem] px-6",
               )}
             >
-              Get Magic UI Pro
+              Get Snap UI Pro
               <ChevronRight className="ml-1 size-4 transition-all duration-300 ease-out group-hover:translate-x-1" />
             </a>
           </div>
