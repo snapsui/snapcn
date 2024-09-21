@@ -1,6 +1,6 @@
 ---
 title: Next.js
-description: Install and configure Magic UI for Next.js
+description: Install and configure Snap UI for Next.js
 published: true
 ---
 
@@ -35,10 +35,10 @@ What import alias would you like configured? @/*
 
 ### Run the CLI
 
-Run the `magicui-cli` init command to setup your project:
+Run the `snapcn` init command to setup your project:
 
 ```bash
-npx magicui-cli init
+npx snapcn init
 ```
 
 ### Configure components.json
@@ -56,18 +56,18 @@ Would you like to use CSS variables for colors? ... no / yes
 You can now start adding components to your project.
 
 ```bash
-npx magicui-cli add blur-in
+npx snapcn add blur-in
 ```
 
 The command above will add the `Blur In` animation component to your project. You can then import it like this:
 
 ```tsx {1,6} showLineNumbers
-import BlurIn from "@/components/magicui/blur-in";
+import { SnapInput } from "@/components/snapui/snap-input";
 
-export default function Home() {
+export default function Input() {
   return (
     <div>
-      <BlurIn word={"Hello World"}></BlurIn>
+      <SnapInput type="email" placeholder="Enter email..." />
     </div>
   );
 }
