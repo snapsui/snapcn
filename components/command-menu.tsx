@@ -3,14 +3,7 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import { type DialogProps } from "@radix-ui/react-dialog";
-import {
-  CircleIcon,
-  FileIcon,
-  LaptopIcon,
-  MoonIcon,
-  SunIcon,
-} from "@radix-ui/react-icons";
-import { useTheme } from "next-themes";
+import { CircleIcon, FileIcon } from "@radix-ui/react-icons";
 
 import { docsConfig } from "@/config/docs";
 import { cn } from "@/lib/utils";
@@ -28,7 +21,6 @@ import {
 export function CommandMenu({ ...props }: DialogProps) {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
-  const { setTheme } = useTheme();
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -92,39 +84,27 @@ export function CommandMenu({ ...props }: DialogProps) {
                 </CommandItem>
               ))}
           </CommandGroup>
-          {docsConfig.sidebarNav.map((group) => (
-            <CommandGroup key={group.title} heading={group.title}>
-              {group.items?.map((navItem) => (
-                <CommandItem
-                  key={navItem.href}
-                  value={navItem.title}
-                  onSelect={() => {
-                    runCommand(() => router.push(navItem.href as string));
-                  }}
-                >
-                  <div className="mr-2 flex size-4 items-center justify-center">
-                    <CircleIcon className="size-3" />
-                  </div>
-                  {navItem.title}
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          ))}
+          {docsConfig.sidebarNav.map((group) => {
+            return (
+              <CommandGroup key={group.title} heading={group.title}>
+                {group.items?.map((navItem) => (
+                  <CommandItem
+                    key={navItem.href}
+                    value={navItem.title}
+                    onSelect={() => {
+                      runCommand(() => router.push(navItem.href as string));
+                    }}
+                  >
+                    <div className="mr-2 flex size-4 items-center justify-center">
+                      <CircleIcon className="size-3" />
+                    </div>
+                    {navItem.title}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            );
+          })}
           <CommandSeparator />
-          <CommandGroup heading="Theme">
-            <CommandItem onSelect={() => runCommand(() => setTheme("light"))}>
-              <SunIcon className="mr-2 size-4" />
-              Light
-            </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => setTheme("dark"))}>
-              <MoonIcon className="mr-2 size-4" />
-              Dark
-            </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => setTheme("system"))}>
-              <LaptopIcon className="mr-2 size-4" />
-              System
-            </CommandItem>
-          </CommandGroup>
         </CommandList>
       </CommandDialog>
     </>

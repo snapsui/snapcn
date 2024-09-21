@@ -1,27 +1,27 @@
 ---
 title: CLI
-description: A CLI for adding magic ui components to your project. Superset of shadcn-ui.
+description: A CLI for adding SnapUI components to your project. Superset of ShadCN-UI.
 ---
 
-## Usage
+## Getting Started
 
-Use the `init` command to initialize dependencies for a new project.
+Begin by using the `init` command to set up the necessary dependencies for your new project.
 
-The `init` command installs dependencies (`framer-motion`), adds the `cn` util, configures `tailwind.config.js`, and CSS variables for the project.
+The `init` command will install essential packages like `framer-motion`, configure `tailwind.config.js`, and add the `cn` utility as well as CSS variables for your project.
 
 ```bash
-npx magicui-cli init
+npx snapcn init
 ```
 
-### shadcn-ui project
+### For Projects Already Using ShadCN-UI
 
-If your project is already using the `shadcn-ui`, don't worry! You can still use magicui.
+No need to worry if you're already using `shadcn-ui` in your project! SnapUI is fully compatible.
 
 ```bash
 npx shadcn-ui init
 ```
 
-Just add these two lines to your `components.json` file:
+Just add the following lines to your `components.json` file:
 
 ```diff
 {
@@ -44,48 +44,46 @@ Just add these two lines to your `components.json` file:
 }
 ```
 
-## add
+## Adding Components
 
-Use the `add` command to add components to your project.
-
-The `add` command adds a component to your project and installs all required dependencies.
+To add a component to your project, use the `add` command. This will automatically install the component and any required dependencies.
 
 ```bash
-npx magicui-cli add [component]
+npx snapcn add [component]
 ```
 
-### Example
+### Example Usage
 
 ```bash
-npx magicui-cli add bento-grid
+npx snapcn add snap-input
 ```
 
-You can also use the optional `--all` flag to install all components:
+If you'd like to install all available components, use the `--all` flag:
 
 ```bash
-npx magicui-cli add --all
+npx snapcn add --all
 ```
 
-You can also use the `--example` flag to select and install example & demo you saw on webside:
+For installing a specific example or demo that you saw on the website, use the `--example` flag:
 
 ```bash
-npx magicui-cli add --example
+npx snapcn add --example
 ```
 
-You can also run the command without any arguments to view a list of all available components:
+Running the `add` command without any arguments will show you a list of available components:
 
 ```bash
-npx magicui-cli add
+npx snapcn add
 ```
 
-## shadcn-ui
+## ShadCN-UI Integration
 
-You can also use the same CLI for selecting & installing shadcn-ui components:
+The CLI can also be used to install and manage `shadcn-ui` components:
 
 ```bash
-npx magicui-cli add --shadcn button
+npx snapcn add --shadcn button
 ```
 
 ```bash
-npx magicui-cli add --shadcn --all
+npx snapcn add --shadcn --all
 ```

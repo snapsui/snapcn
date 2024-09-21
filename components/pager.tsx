@@ -6,6 +6,11 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 import { docsConfig } from "@/config/docs";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface DocsPagerProps {
   doc: Doc;
@@ -21,22 +26,32 @@ export function DocPager({ doc }: DocsPagerProps) {
   return (
     <div className="flex flex-row items-center justify-between">
       {pager?.prev?.href && (
-        <Link
-          href={pager.prev.href}
-          className={buttonVariants({ variant: "outline" })}
-        >
-          <ChevronLeftIcon className="mr-2 size-4" />
-          {pager.prev.title}
-        </Link>
+        <Tooltip>
+          <TooltipTrigger>
+            <Link
+              href={pager.prev.href}
+              className={buttonVariants({ variant: "outline" })}
+            >
+              <ChevronLeftIcon className="size-4" />
+            </Link>
+          </TooltipTrigger>
+          <TooltipContent>{pager.prev.title}</TooltipContent>
+        </Tooltip>
       )}
       {pager?.next?.href && (
-        <Link
-          href={pager.next.href}
-          className={cn(buttonVariants({ variant: "outline" }), "ml-auto")}
-        >
-          {pager.next.title}
-          <ChevronRightIcon className="ml-2 size-4" />
-        </Link>
+        <div className="ml-auto">
+          <Tooltip>
+            <TooltipTrigger>
+              <Link
+                href={pager.next.href}
+                className={cn(buttonVariants({ variant: "outline" }))}
+              >
+                <ChevronRightIcon className="size-4" />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>{pager.next.title}</TooltipContent>
+          </Tooltip>
+        </div>
       )}
     </div>
   );

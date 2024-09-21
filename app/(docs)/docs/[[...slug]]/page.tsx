@@ -14,7 +14,6 @@ import { notFound } from "next/navigation";
 import { ChevronRightIcon, ExternalLinkIcon } from "@radix-ui/react-icons";
 import { allDocs } from "contentlayer/generated";
 
-import { Contribute } from "@/components/contribute";
 import { TableOfContents } from "@/components/toc";
 
 interface DocPageProps {
@@ -44,7 +43,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${doc.title} | Magic UI`,
+    title: `${doc.title} | Snap UI`,
     description: doc.description,
     openGraph: {
       title: doc.title,
@@ -65,7 +64,7 @@ export async function generateMetadata({
       title: doc.title,
       description: doc.description,
       images: [doc.image],
-      creator: "@dillionverma",
+      creator: "@jeet1desai",
     },
   };
 }
@@ -146,7 +145,6 @@ export default async function DocPage({ params }: DocPageProps) {
             <ScrollArea className="pb-10">
               <div className="space-y-4 sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
                 <TableOfContents toc={toc} />
-                <Contribute doc={doc} />
               </div>
             </ScrollArea>
           </div>

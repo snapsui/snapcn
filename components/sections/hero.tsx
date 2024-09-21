@@ -5,31 +5,23 @@ import { ChevronRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import TechStack from "@/components/tech-stack";
-import AnimatedGradientText from "@/registry/components/magicui/animated-gradient-text";
+import AnimatedShinyText from "@/registry/components/magicui/animated-shiny-text";
 
 function HeroPill({ href, title }: { href: string; title: string }) {
   return (
     <Link href={href}>
-      <AnimatedGradientText>
+      <div className="z-10 flex items-center justify-center">
         <div
           className={cn(
-            `absolute inset-0 block size-full animate-gradient bg-gradient-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-[length:var(--bg-size)_100%] [border-radius:inherit] [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)]`,
-            `p-px ![mask-composite:subtract]`,
-          )}
-        />
-        🎉 <Separator className="mx-2 h-4" orientation="vertical" />
-        <span
-          className={cn(
-            `animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
-            `inline`,
+            "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
           )}
         >
-          {title}
-        </span>
-        <ChevronRight className="ml-1 size-4 text-gray-500" />
-      </AnimatedGradientText>
+          <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+            <span>✨ {title}</span>
+          </AnimatedShinyText>
+        </div>
+      </div>
     </Link>
   );
 }
@@ -41,10 +33,10 @@ export default async function Hero() {
         post.date && post.date <= new Date().toISOString() && post.published,
     )
     .sort((a, b) => {
-      if (!a.date && !b.date) return 0; // Both dates are undefined, keep original order
-      if (!a.date) return 1; // Move a to the end if date is undefined
-      if (!b.date) return -1; // Move b to the end if date is undefined
-      return compareDesc(new Date(a.date), new Date(b.date)); // Both dates are defined, proceed with comparison
+      if (!a.date && !b.date) return 0;
+      if (!a.date) return 1;
+      if (!b.date) return -1;
+      return compareDesc(new Date(a.date), new Date(b.date));
     })[0];
 
   return (
@@ -61,9 +53,10 @@ export default async function Hero() {
                     "relative mx-0 max-w-[43.5rem]  pt-5  md:mx-auto md:px-4 md:py-2",
                     "text-left tracking-tighter text-balance md:text-center font-semibold",
                     "md:text-7xl lg:text-7xl sm:text-7xl text-5xl",
+                    `animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
                   )}
                 >
-                  UI library for Design Engineers
+                  UI Component for Frontend Engineer
                 </h1>
               </div>
 
@@ -86,7 +79,7 @@ export default async function Hero() {
                         size: "lg",
                       }),
                       "gap-2 whitespace-pre md:flex",
-                      "group relative w-full gap-1 rounded-xl text-sm font-semibold tracking-tighter ring-offset-inherit transition-all duration-150 ease-in-out hover:ring-2 hover:ring-black hover:ring-offset-2 hover:ring-offset-current dark:hover:ring-neutral-50",
+                      "group relative w-full gap-1 rounded-lg text-sm font-semibold tracking-tighter ring-offset-inherit transition-all duration-150 ease-in-out hover:ring-2 hover:ring-black hover:ring-offset-2 hover:ring-offset-current dark:hover:ring-neutral-50",
                     )}
                   >
                     Browse Components
@@ -99,8 +92,8 @@ export default async function Hero() {
                         size: "lg",
                         variant: "outline",
                       }),
-                      "gap-2 whitespace-pre md:flex",
-                      "group relative w-full gap-1 overflow-hidden rounded-xl text-sm font-semibold tracking-tighter transition-all duration-150 ease-in-out hover:ring-2 hover:ring-neutral-300 hover:ring-offset-2 hover:ring-offset-inherit dark:hover:ring-black dark:hover:ring-offset-black ",
+                      "gap-2 whitespace-pre md:flex border-none",
+                      "group relative w-full gap-1 overflow-hidden rounded-lg text-sm font-semibold tracking-tighter transition-all duration-150 ease-in-out hover:ring-2 hover:ring-neutral-300 hover:ring-offset-2 hover:ring-offset-inherit dark:hover:ring-black dark:hover:ring-offset-black ",
                     )}
                   >
                     Get Started
@@ -109,19 +102,6 @@ export default async function Hero() {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="relative mx-auto flex w-full max-w-56 items-center justify-center">
-            <TechStack
-              className="mx-auto flex w-full items-center justify-between"
-              technologies={[
-                "react",
-                "typescript",
-                "tailwindcss",
-                "framermotion",
-                "shadcn",
-              ]}
-            />
           </div>
         </div>
       </div>

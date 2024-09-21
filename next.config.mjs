@@ -20,7 +20,7 @@ const nextConfig = {
     },
   },
   images: {
-    domains: ["localhost", "cdn.magicui.design"],
+    domains: ["localhost", "cdn.snapui.design"],
   },
   async redirects() {
     return [
@@ -31,7 +31,12 @@ const nextConfig = {
       },
       {
         source: "/components",
-        destination: "/docs/components/marquee",
+        destination: "/docs/components/snap-input",
+        permanent: true,
+      },
+      {
+        source: "/snapui",
+        destination: "/docs/snapui/snap-input",
         permanent: true,
       },
       {
@@ -40,8 +45,18 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/snapui/:path*",
+        destination: "/docs/snapui/:path*",
+        permanent: true,
+      },
+      {
         source: "/docs/components",
-        destination: "/docs/components/marquee",
+        destination: "/docs/components/snap-input",
+        permanent: true,
+      },
+      {
+        source: "/docs/snapui",
+        destination: "/docs/snapui/snap-input",
         permanent: true,
       },
     ];
