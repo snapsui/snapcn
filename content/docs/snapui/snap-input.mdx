@@ -1,12 +1,12 @@
 ---
 title: Input
 date: 2024-09-21
-description: An animated button with a rainbow effect.
+description: Displays a form input field or a component that looks like an input field.
 author: jeet1desai
 published: true
 ---
 
-<ComponentPreview name="rainbow-button-demo" />
+<ComponentPreview name="snap-input-demo-1" />
 
 ## Installation
 
@@ -18,59 +18,9 @@ published: true
 </TabsList>
 <TabsContent value="cli">
 
-<Steps>
-
-<Step>Run the following command:</Step>
-
 ```bash
-npx magicui-cli add rainbow-button
+npx snapcn add snap-input
 ```
-
-<Step>Update `globals.css`</Step>
-
-Add the following to your `globals.css` file:
-
-```css
-:root {
-  --color-1: 0 100% 63%;
-  --color-2: 270 100% 63%;
-  --color-3: 210 100% 63%;
-  --color-4: 195 100% 63%;
-  --color-5: 90 100% 63%;
-}
-```
-
-<Step>Update `tailwind.config.js`</Step>
-
-Add the following animations to your `tailwind.config.js` file:
-
-```js title="tailwind.config.js" {5-20}
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        "color-1": "hsl(var(--color-1))",
-        "color-2": "hsl(var(--color-2))",
-        "color-3": "hsl(var(--color-3))",
-        "color-4": "hsl(var(--color-4))",
-        "color-5": "hsl(var(--color-5))",
-      },
-      animation: {
-        rainbow: "rainbow var(--speed, 2s) infinite linear",
-      },
-      keyframes: {
-        rainbow: {
-          "0%": { "background-position": "0%" },
-          "100%": { "background-position": "200%" },
-        },
-      },
-    },
-  },
-};
-```
-
-</Steps>
 
 </TabsContent>
 
@@ -80,53 +30,9 @@ module.exports = {
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="rainbow-button" />
+<ComponentSource name="snap-input" />
 
 <Step>Update the import paths to match your project setup.</Step>
-
-<Step>Update `globals.css`</Step>
-
-Add the following to your `globals.css` file:
-
-```css
-:root {
-  --color-1: 0 100% 63%;
-  --color-2: 270 100% 63%;
-  --color-3: 210 100% 63%;
-  --color-4: 195 100% 63%;
-  --color-5: 90 100% 63%;
-}
-```
-
-<Step>Update `tailwind.config.js`</Step>
-
-Add the following animations to your `tailwind.config.js` file:
-
-```js title="tailwind.config.js" {5-20}
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        "color-1": "hsl(var(--color-1))",
-        "color-2": "hsl(var(--color-2))",
-        "color-3": "hsl(var(--color-3))",
-        "color-4": "hsl(var(--color-4))",
-        "color-5": "hsl(var(--color-5))",
-      },
-      animation: {
-        rainbow: "rainbow var(--speed, 2s) infinite linear",
-      },
-      keyframes: {
-        rainbow: {
-          "0%": { "background-position": "0%" },
-          "100%": { "background-position": "200%" },
-        },
-      },
-    },
-  },
-};
-```
 
 </Steps>
 
@@ -134,8 +40,28 @@ module.exports = {
 
 </Tabs>
 
+### Usage
+
+```bash
+import { SnapInput } from "@/components/snapui/snap-input"
+```
+
+```bash
+<SnapInput />
+```
+
+## Examples
+
+<ComponentPreview name="snap-input-demo-2" />
+
 ## Props
 
-| Prop     | Type            | Description                                    |
-| -------- | --------------- | ---------------------------------------------- |
-| children | React.ReactNode | The content to be displayed inside the button. |
+| Prop      | Type                   | Description                                                                                       |
+| --------- | ---------------------- | ------------------------------------------------------------------------------------------------- |
+| leftIcon  | React.ReactNode        | An icon to be displayed on the left side of the input field.                                      |
+| rightIcon | React.ReactNode        | An icon to be displayed on the right side of the input field.                                     |
+| hint      | string                 | A small hint or additional information to be displayed below the input field. Visible on hover.   |
+| className | string                 | Additional classes to style the input field.                                                      |
+| type      | React.HTMLInputElement | Specifies the input field's type (e.g., text, password, email).                                   |
+| ref       | React.Ref              | Reference to the input element, for handling DOM-related functions.                               |
+| props     | React.HTMLInputElement | TInherits all standard HTML input attributes such as placeholder, value, onChange, disabled, etc. |

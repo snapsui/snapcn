@@ -14,7 +14,7 @@ export interface InputProps
 const SnapInput = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, leftIcon, rightIcon, hint, ...props }, ref) => {
     return (
-      <div className="group relative w-full">
+      <div className="group relative">
         <div className="relative flex items-center w-full">
           {leftIcon && (
             <span className="absolute left-3 flex items-center pointer-events-none text-primary">
@@ -38,7 +38,7 @@ const SnapInput = React.forwardRef<HTMLInputElement, InputProps>(
             </span>
           )}
         </div>
-        <p className="mt-1 text-xs text-primary text-muted-foreground transition-all duration-300 ease-in-out group-hover:max-h-10 group-hover:opacity-100 max-h-0 overflow-hidden">
+        <p className="pl-1 mt-1 text-xs text-primary text-muted-foreground transition-all duration-300 ease-in-out group-hover:max-h-10 group-hover:opacity-100 max-h-0 overflow-hidden">
           {hint}
         </p>
       </div>

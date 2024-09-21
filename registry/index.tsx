@@ -283,6 +283,24 @@ const ui: Registry = {
 };
 
 const example: Registry = {
+  "snap-input-demo-1": {
+    name: "snap-input-demo-1",
+    type: "components:example",
+    registryDependencies: [],
+    files: ["registry/components/example/snap-input-demo-1.tsx"],
+    component: React.lazy(
+      () => import("@/registry/components/example/snap-input-demo-1"),
+    ),
+  },
+  "snap-input-demo-2": {
+    name: "snap-input-demo-2",
+    type: "components:example",
+    registryDependencies: [],
+    files: ["registry/components/example/snap-input-demo-2.tsx"],
+    component: React.lazy(
+      () => import("@/registry/components/example/snap-input-demo-2"),
+    ),
+  },
   "magic-card-demo": {
     name: "magic-card-demo",
     type: "components:example",

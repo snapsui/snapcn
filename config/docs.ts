@@ -61,7 +61,7 @@ export const docsConfig: DocsConfig = {
           title: "Input",
           href: `/docs/snapui/snap-input`,
           items: [],
-          label: "",
+          label: "New",
         },
       ],
     },
