@@ -5,7 +5,6 @@ import { ChevronRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import TechStack from "@/components/tech-stack";
 import AnimatedShinyText from "@/registry/components/magicui/animated-shiny-text";
 
 function HeroPill({ href, title }: { href: string; title: string }) {
@@ -60,19 +59,17 @@ export default async function Hero() {
                 </h1>
               </div>
 
-              <p className="max-w-xl text-balance text-left text-base tracking-tight text-black dark:font-medium dark:text-white md:text-center md:text-lg ">
-                50+ free and open-source animated components built with{" "}
-                <b>React</b>, <b>Typescript</b>, <b>Tailwind CSS</b>, and{" "}
-                <b>Framer Motion</b>
+              <p className="max-w-xl text-balance text-left text-base tracking-tight text-black dark:font-medium dark:text-white md:text-center md:text-lg">
+                Explore more than 5+ free components, powered by <b>React</b>,{" "}
+                <b>TypeScript</b>, <b>Tailwind CSS</b>, and <b>Framer Motion</b>
                 .
-                <br />
-                Perfect companion for <b>shadcn/ui</b>.
+                <br />A perfect addition to your <b>shadcn/ui</b> toolkit.
               </p>
 
-              <div className="mx-0 flex w-full max-w-full flex-col gap-4 py-1 sm:max-w-lg sm:flex-row md:mx-auto">
+              <div className="mx-0 flex flex-col gap-4 py-1 sm:max-w-lg sm:flex-row md:mx-auto">
                 <div className="flex w-full flex-col gap-2 sm:flex-row sm:gap-4">
                   <Link
-                    href="/components"
+                    href="/snapui"
                     className={cn(
                       buttonVariants({
                         variant: "default",
@@ -84,20 +81,6 @@ export default async function Hero() {
                   >
                     Browse Components
                     <ChevronRight className="ml-1  size-4 shrink-0 transition-all duration-300 ease-out group-hover:translate-x-1" />
-                  </Link>
-                  <Link
-                    href="/docs"
-                    className={cn(
-                      buttonVariants({
-                        size: "lg",
-                        variant: "outline",
-                      }),
-                      "gap-2 whitespace-pre md:flex border-none",
-                      "group relative w-full gap-1 overflow-hidden rounded-lg text-sm font-semibold tracking-tighter transition-all duration-150 ease-in-out hover:ring-2 hover:ring-neutral-300 hover:ring-offset-2 hover:ring-offset-inherit dark:hover:ring-black dark:hover:ring-offset-black ",
-                    )}
-                  >
-                    Get Started
-                    <ChevronRight className="ml-1 size-4 shrink-0 transition-all duration-300 ease-out group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>

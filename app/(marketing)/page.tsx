@@ -7,9 +7,9 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      <Showcase />
+      {/* <Showcase />
       <ComponentDemos />
-      <Testimonials />
+      <Testimonials /> */}
     </>
   );
 }

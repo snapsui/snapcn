@@ -91,7 +91,7 @@ export function DocsSidebarNavItems({
     <div className="grid grid-flow-row auto-rows-max text-sm">
       {items.map((item, index) =>
         item.href && !item.disabled ? (
-          <div className="flex gap-[4px] items-center">
+          <div key={index} className="flex gap-[4px] items-center">
             <div
               className={cn(
                 "w-[4px] h-[4px]  rounded-xl",
@@ -101,7 +101,6 @@ export function DocsSidebarNavItems({
               )}
             ></div>
             <Link
-              key={index}
               href={item.href}
               className={cn(
                 "group flex w-full items-center rounded-md border border-transparent px-2 py-1",
