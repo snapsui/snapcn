@@ -1,6 +1,6 @@
 import { FadeText } from "@/components/magicui/fade-text";
 
-export default async function FadeTextDemo() {
+export default function FadeTextDemo() {
   return (
     <div className="flex flex-col space-y-8 text-center">
       <FadeText

@@ -1,5 +1,5 @@
 import SparklesText from "@/components/magicui/sparkles-text";
 
-export default async function SparklesTextDemo() {
+export default function SparklesTextDemo() {
   return <SparklesText text="Magic UI" />;
 }

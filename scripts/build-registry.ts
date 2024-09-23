@@ -1,6 +1,7 @@
 // @ts-nocheck
 import fs from "fs";
 import path, { basename } from "path";
+import * as React from "react";
 import { rimraf } from "rimraf";
 
 import { downloadRegistry } from "../registry/index.tsx";

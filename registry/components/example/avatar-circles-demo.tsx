@@ -7,6 +7,6 @@ const avatarUrls = [
   "https://avatars.githubusercontent.com/u/59228569",
 ];
 
-export default async function AvatarCirclesDemo() {
+export default function AvatarCirclesDemo() {
   return <AvatarCircles numPeople={99} avatarUrls={avatarUrls} />;
 }

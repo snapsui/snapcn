@@ -3,7 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 
-export default async function AnimatedGradientTextDemo() {
+export default function AnimatedGradientTextDemo() {
   return (
     <div className="z-10 flex min-h-[16rem] items-center justify-center">
       <AnimatedGradientText>

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 
 const frameworks = [
   {
@@ -99,14 +100,14 @@ export function ComponentInstallation({
   return (
     <div className="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-6" {...props}>
       {frameworks.map((framework) => (
-        <a
+        <Link
           key={framework.name}
           className="flex w-full flex-col items-center rounded-md border bg-card p-6 text-card-foreground transition-colors hover:bg-muted/50 sm:p-10 hover:border-none transition duration-300"
           href={framework.href}
         >
           {framework.icon}
           <p className="mt-2 font-medium">{framework.name}</p>
-        </a>
+        </Link>
       ))}
     </div>
   );
