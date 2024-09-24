@@ -306,6 +306,15 @@ const example: Registry = {
       () => import("@/registry/components/example/snap-input-demo-2"),
     ),
   },
+  "snap-float-button-demo": {
+    name: "snap-float-button-demo",
+    type: "components:example",
+    registryDependencies: [],
+    files: ["registry/components/example/snap-float-button-demo.tsx"],
+    component: React.lazy(
+      () => import("@/registry/components/example/snap-float-button-demo"),
+    ),
+  },
   "magic-card-demo": {
     name: "magic-card-demo",
     type: "components:example",
