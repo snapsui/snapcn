@@ -8,7 +8,7 @@ interface DocsConfig {
 export const docsConfig: DocsConfig = {
   mainNav: [
     {
-      title: "SnapUI",
+      title: "UI",
       href: "/snapui",
     },
     {
@@ -69,6 +69,12 @@ export const docsConfig: DocsConfig = {
         {
           title: "Input",
           href: `/docs/snapui/snap-input`,
+          items: [],
+          label: "",
+        },
+        {
+          title: "Float Button",
+          href: `/docs/snapui/snap-float-button`,
           items: [],
           label: "New",
         },

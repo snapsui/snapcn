@@ -9,6 +9,7 @@ import {
   ChevronUpIcon,
   ExternalLinkIcon,
 } from "@radix-ui/react-icons";
+import { AnimatePresence, motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
@@ -68,9 +69,18 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
                 <ChevronUpIcon className="ml-2" />
               )}
             </div>
-            {isOpen.includes(index) && item?.items && (
-              <DocsSidebarNavItems items={item.items} pathname={pathname} />
-            )}
+            <AnimatePresence initial={false}>
+              {isOpen.includes(index) && item?.items && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  <DocsSidebarNavItems items={item.items} pathname={pathname} />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         );
       })}

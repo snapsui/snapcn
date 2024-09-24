@@ -131,8 +131,6 @@ export const add = new Command()
 
       const snapuiPayload = await fetchTree(snapuiTree);
 
-      console.log(snapuiPayload);
-
       const shadcnPayload = await fetchTreeFromShadcn(config.style, shadcnTree);
       const baseColor = await getRegistryBaseColor(config.tailwind.baseColor);
 
@@ -141,7 +139,7 @@ export const add = new Command()
         process.exit(0);
       } else {
         snapuiPayload.length !== 0 &&
-          logger.info(`Found ${snapuiPayload.length}x Magic UI components.`);
+          logger.info(`Found ${snapuiPayload.length}x Snap UI components.`);
         shadcnPayload.length !== 0 &&
           logger.info(`Found ${shadcnPayload.length}x Shadcn UI components.`);
       }
