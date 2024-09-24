@@ -8,6 +8,11 @@ const ui: Registry = {
     type: "components:snapui",
     files: ["registry/components/snapui/snap-input.tsx"],
   },
+  "snap-float-button": {
+    name: "snap-float-button",
+    type: "components:snapui",
+    files: ["registry/components/snapui/snap-float-button.tsx"],
+  },
   "magic-card": {
     name: "magic-card",
     type: "components:magicui",

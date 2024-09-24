@@ -84,8 +84,28 @@ module.exports = {
           "background-position-spin 3000ms infinite alternate",
         pulse: "pulse var(--duration) ease-out infinite",
         rainbow: "rainbow var(--speed, 2s) infinite linear",
+        "float-up": "float-up 0.3s ease-out",
+        "float-down": "float-down 0.3s ease-out",
+        "float-zoom": "float-zoom 0.3s ease-out",
+        "float-out": "float-out 0.3s ease-out",
       },
       keyframes: {
+        "float-up": {
+          "0%": { height: "21.5rem" },
+          "100%": { height: "3rem" },
+        },
+        "float-down": {
+          "0%": { height: "3rem" },
+          "100%": { height: "21.5rem" },
+        },
+        "float-zoom": {
+          "0%": { transform: "translateY(10px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        "float-out": {
+          "0%": { transform: "translateY(0)", opacity: "1" },
+          "100%": { transform: "translateY(10px)", opacity: "0" },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
