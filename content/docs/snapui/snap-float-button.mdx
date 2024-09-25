@@ -25,4 +25,34 @@ npx snapcn add snap-float-button
 
 </TabsContent>
 
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="snap-float-button" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
 </Tabs>
+
+### Usage
+
+```javascript
+import {
+  SnapFloatButton,
+  SnapFloatButtonItem,
+} from "@/components/snapui/snap-float-button";
+
+<SnapFloatButton>
+  <SnapFloatButtonItem Icon={GitHubLogoIcon} onClick={() => {}} />
+  <SnapFloatButtonItem Icon={DiscordLogoIcon} onClick={() => {}} />
+  <SnapFloatButtonItem Icon={NotionLogoIcon} onClick={() => {}} />
+  <SnapFloatButtonItem Icon={OpacityIcon} onClick={() => {}} />
+</SnapFloatButton>;
+```
