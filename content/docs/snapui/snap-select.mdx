@@ -46,14 +46,14 @@ npx snapcn add snap-select
 
 ## Props
 
-| Prop         | Type                                                             | Description                                                                                      |
-| ------------ | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| leftIcon     | React.ReactNode                                                  | An icon or image to be displayed on the left side of the select trigger.                         |
-| selectedIcon | React.ReactNode                                                  | An icon or image to be displayed when an item is selected.                                       |
-| items        | Array<{ label: string; value: string; icon?: React.ReactNode; }> | Array of items to be displayed in the dropdown. Each item has a label, value, and optional icon. |
-| placeholder  | string                                                           | Placeholder text displayed when no option is selected.                                           |
-| isSearch     | boolean                                                          | Enables a search input within the dropdown for filtering the list of options.                    |
-| value        | string                                                           | The currently selected value of the select component.                                            |
-| className    | string                                                           | Additional classes to style the select component.                                                |
-| onChange     | (value: string) => void                                          | Function that triggers when the selected value changes.                                          |
-| props        | React.ComponentPropsWithoutRef<typeof SelectPrimitive.Root>      | Inherits all standard select attributes like disabled, required, etc.                            |
+| Prop         | Type            | Description                                                                                                               |
+| ------------ | --------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| leftIcon     | React.ReactNode | An icon or image to be displayed on the left side of the select trigger.                                                  |
+| selectedIcon | React.ReactNode | An icon or image to be displayed when an item is selected.                                                                |
+| items        | Array           | An array of objects where each object has a `label` (string), `value` (string), and an optional `icon` (React.ReactNode). |
+| placeholder  | string          | Placeholder text displayed when no option is selected.                                                                    |
+| isSearch     | boolean         | Enables a search input within the dropdown for filtering the list of options.                                             |
+| value        | string          | The currently selected value of the select component.                                                                     |
+| className    | string          | Additional classes to style the select component.                                                                         |
+| onChange     | function        | A callback function that is called when the selected value changes.                                                       |
+| props        | object          | Inherits all standard select attributes such as `disabled`, `required`, and others.                                       |
