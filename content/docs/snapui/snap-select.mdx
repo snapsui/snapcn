@@ -1,0 +1,59 @@
+---
+title: Select
+date: 2024-09-21
+description: Displays a dropdown menu that allows users to choose one option from a list of predefined options. It can also include search functionality, icons or images next to the options, and customizable styling.
+author: jeet1desai
+published: true
+---
+
+<ComponentPreview name="snap-select-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx snapcn add snap-select
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="snap-input" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="snap-select" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+
+| Prop         | Type                                                             | Description                                                                                      |
+| ------------ | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| leftIcon     | React.ReactNode                                                  | An icon or image to be displayed on the left side of the select trigger.                         |
+| selectedIcon | React.ReactNode                                                  | An icon or image to be displayed when an item is selected.                                       |
+| items        | Array<{ label: string; value: string; icon?: React.ReactNode; }> | Array of items to be displayed in the dropdown. Each item has a label, value, and optional icon. |
+| placeholder  | string                                                           | Placeholder text displayed when no option is selected.                                           |
+| isSearch     | boolean                                                          | Enables a search input within the dropdown for filtering the list of options.                    |
+| value        | string                                                           | The currently selected value of the select component.                                            |
+| className    | string                                                           | Additional classes to style the select component.                                                |
+| onChange     | (value: string) => void                                          | Function that triggers when the selected value changes.                                          |
+| props        | React.ComponentPropsWithoutRef<typeof SelectPrimitive.Root>      | Inherits all standard select attributes like disabled, required, etc.                            |

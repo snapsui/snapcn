@@ -73,14 +73,43 @@ export const docsConfig: DocsConfig = {
           label: "",
         },
         {
+          title: "Phone Input",
+          href: `/docs/snapui/snap-phone-input`,
+          items: [],
+          label: ".",
+        },
+        {
+          title: "URL Input",
+          href: `/docs/snapui/snap-url-input`,
+          items: [],
+          label: ".",
+        },
+        {
+          title: "Amount Input",
+          href: `/docs/snapui/snap-amount-input`,
+          items: [],
+          label: ".",
+        },
+        {
+          title: "TextArea",
+          href: `/docs/snapui/snap-textarea`,
+          items: [],
+          label: ".",
+        },
+        {
+          title: "Select",
+          href: `/docs/snapui/snap-select`,
+          items: [],
+          label: "",
+        },
+        {
           title: "Float Button",
           href: `/docs/snapui/snap-float-button`,
           items: [],
-          label: "New",
+          label: "",
         },
       ],
     },
-    // },
     {
       title: "Components",
       // items: [

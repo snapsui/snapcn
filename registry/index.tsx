@@ -8,10 +8,22 @@ const ui: Registry = {
     type: "components:snapui",
     files: ["registry/components/snapui/snap-input.tsx"],
   },
+  "snap-phone-input": {
+    name: "snap-phone-input",
+    type: "components:snapui",
+    files: ["registry/components/snapui/snap-phone-input.tsx"],
+  },
   "snap-float-button": {
     name: "snap-float-button",
     type: "components:snapui",
     files: ["registry/components/snapui/snap-float-button.tsx"],
+  },
+  "snap-select": {
+    name: "snap-select",
+    type: "components:snapui",
+    dependencies: ["@radix-ui/react-select"],
+    registryDependencies: ["shadcn:snap-input"],
+    files: ["registry/components/snapui/snap-select.tsx"],
   },
   "magic-card": {
     name: "magic-card",
@@ -306,6 +318,24 @@ const example: Registry = {
       () => import("@/registry/components/example/snap-input-demo-2"),
     ),
   },
+  "snap-phone-input-demo": {
+    name: "snap-phone-input-demo",
+    type: "components:example",
+    registryDependencies: [],
+    files: ["registry/components/example/snap-phone-input-demo.tsx"],
+    component: React.lazy(
+      () => import("@/registry/components/example/snap-phone-input-demo"),
+    ),
+  },
+  "snap-select-demo": {
+    name: "snap-select-demo",
+    type: "components:example",
+    registryDependencies: [],
+    files: ["registry/components/example/snap-select-demo.tsx"],
+    component: React.lazy(
+      () => import("@/registry/components/example/snap-select-demo"),
+    ),
+  },
   "snap-float-button-demo": {
     name: "snap-float-button-demo",
     type: "components:example",
@@ -315,6 +345,7 @@ const example: Registry = {
       () => import("@/registry/components/example/snap-float-button-demo"),
     ),
   },
+
   "magic-card-demo": {
     name: "magic-card-demo",
     type: "components:example",
