@@ -1,89 +1,104 @@
 ---
 title: CLI
-description: A CLI for adding SnapUI components to your project. Superset of ShadCN-UI.
+description: Use the CLI to add components to your project.
 ---
 
-## Getting Started
+<Callout>
 
-Begin by using the `init` command to set up the necessary dependencies for your new project.
+**Note:** Use the [shadcn/ui](https://github.com/shadcn/ui) CLI to quickly initialize and customize components in your project.
 
-The `init` command will install essential packages like `framer-motion`, configure `tailwind.config.js`, and add the `cn` utility as well as CSS variables for your project.
+</Callout>
 
-```bash
-npx snapcn init
-```
+## init
 
-### For Projects Already Using ShadCN-UI
+Use the `init` command to initialize configuration and dependencies for a new project.
 
-No need to worry if you're already using `shadcn-ui` in your project! SnapUI is fully compatible.
+The `init` command installs dependencies, adds the `cn` util, configures `tailwind.config.js`, and CSS variables for the project.
 
 ```bash
-npx shadcn-ui init
+npx shadcn@latest init
 ```
 
-Just add the following lines to your `components.json` file:
+You will be asked a few questions to configure `components.json`:
 
-```diff
-{
-  "$schema": "https://ui.shadcn.com/schema.json",
-  "style": "default",
-  "rsc": true,
-  "tsx": true,
-  "tailwind": {
-    "config": "tailwind.config.js",
-    "css": "app/globals.css",
-    "baseColor": "slate",
-    "cssVariables": true
-  },
-  "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils",
-+   "ui": "@/components/ui",
-+   "magicui": "@/components/magicui"
-  }
-}
+```txt showLineNumbers
+Which style would you like to use? › New York
+Which color would you like to use as base color? › Zinc
+Do you want to use CSS variables for colors? › no / yes
 ```
 
-## Adding Components
+### Options
 
-To add a component to your project, use the `add` command. This will automatically install the component and any required dependencies.
+```txt
+Usage: shadcn init [options] [components...]
+
+initialize your project and install dependencies
+
+Arguments:
+  components         the components to add or a url to the component.
+
+Options:
+  -d, --defaults    use default values i.e new-york, zinc and css variables. (default: false)
+  -f, --force       force overwrite of existing components.json. (default: false)
+  -y, --yes         skip confirmation prompt. (default: false)
+  -c, --cwd <cwd>   the working directory. defaults to the current directory.
+  -h, --help       display help for command
+```
+
+## add
+
+Use the `add` command to add components and dependencies to your project.
 
 ```bash
-npx snapcn add [component]
+npx shadcn@latest add [component]
 ```
 
-### Example Usage
+You will be presented with a list of components to choose from:
 
-```bash
-npx snapcn add snap-input
+```txt
+Which components would you like to add? › Space to select. A to toggle all.
+Enter to submit.
+
+◯  accordion
+◯  alert
+◯  alert-dialog
+◯  aspect-ratio
+◯  avatar
+◯  badge
+◯  button
+◯  calendar
+◯  card
+◯  checkbox
 ```
 
-If you'd like to install all available components, use the `--all` flag:
+### Options
 
-```bash
-npx snapcn add --all
+```txt
+Usage: shadcn add [options] [components...]
+
+add a component to your project
+
+Arguments:
+  components         the components to add or a url to the component.
+
+Options:
+  -y, --yes          skip confirmation prompt. (default: false)
+  -o, --overwrite    overwrite existing files. (default: false)
+  -c, --cwd <cwd>    the working directory. defaults to the current directory.
+  -p, --path <path>  the path to add the component to.
+  -h, --help         display help for command
 ```
 
-For installing a specific example or demo that you saw on the website, use the `--example` flag:
+## Monorepo
+
+In a monorepo, you can specify the path to your workspace with the `-c` or `--cwd` option.
 
 ```bash
-npx snapcn add --example
+npx shadcn@latest init -c ./apps/www
 ```
 
-Running the `add` command without any arguments will show you a list of available components:
+or
 
 ```bash
-npx snapcn add
-```
-
-## ShadCN-UI Integration
-
-The CLI can also be used to install and manage `shadcn-ui` components:
-
-```bash
-npx snapcn add --shadcn button
-```
-
-```bash
-npx snapcn add --shadcn --all
+npx shadcn@latest add alert-dialog -c ./apps/www
 ```

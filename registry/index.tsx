@@ -8,6 +8,18 @@ const ui: Registry = {
     type: "components:snapui",
     files: ["registry/components/snapui/snap-input.tsx"],
   },
+  "snap-phone-input": {
+    name: "snap-phone-input",
+    type: "components:snapui",
+    registryDependencies: ["shadcn:snap-input", "shadcn:snap-select"],
+    dependencies: [
+      "@radix-ui/react-select",
+      "country-flag-icons",
+      "react-phone-number-input",
+      "libphonenumber-js",
+    ],
+    files: ["registry/components/snapui/snap-phone-input.tsx"],
+  },
   "snap-float-button": {
     name: "snap-float-button",
     type: "components:snapui",
@@ -311,6 +323,15 @@ const example: Registry = {
     files: ["registry/components/example/snap-input-demo-2.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-input-demo-2"),
+    ),
+  },
+  "snap-phone-input-demo": {
+    name: "snap-phone-input-demo",
+    type: "components:example",
+    registryDependencies: [],
+    files: ["registry/components/example/snap-phone-input-demo.tsx"],
+    component: React.lazy(
+      () => import("@/registry/components/example/snap-phone-input-demo"),
     ),
   },
   "snap-select-demo": {

@@ -11,15 +11,7 @@ Initialize your project with the `init` command to set up necessary dependencies
 Running the `init` command installs essential packages (`framer-motion`), adds the `cn` utility, sets up the `tailwind.config.js`, file, and applies CSS variables for the project.
 
 ```bash
-npx snapcn init
-```
-
-### Using with shadcn-ui
-
-If you're already using `shadcn-ui`, no problem! You can seamlessly integrate Snap UI into your project.
-
-```bash
-npx shadcn-ui init
+npx shadcn@latest init
 ```
 
 To make Snap UI work, simply add the following two lines in your `components.json`:

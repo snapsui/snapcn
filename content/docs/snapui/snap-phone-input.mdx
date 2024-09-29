@@ -1,0 +1,65 @@
+---
+title: Phone Input
+date: 2024-09-26
+description: A sleek phone input with country code selector for seamless international dialing.
+author: jeet1desai
+published: true
+---
+
+<ComponentPreview name="snap-phone-input-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx snapcn add snap-phone-input
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install dependency.</Step>
+
+```bash
+npm install @radix-ui/react-select country-flag-icons react-phone-number-input libphonenumber-js
+```
+
+<Step>`Snap Input` Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="snap-input" />
+
+<Step>`Snap Select` Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="snap-select" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="snap-phone-input" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+### Props
+
+| Prop        | Type                        | Required | Default                 | Description                                              |
+| ----------- | --------------------------- | -------- | ----------------------- | -------------------------------------------------------- |
+| value       | string                      | Yes      | ""                      | The current value of the phone number input.             |
+| onChange    | (value: E164Number) => void | Yes      | undefined               | Callback function invoked when the phone number changes. |
+| placeholder | string                      | No       | "Enter phone number..." | Placeholder text for the input field.                    |
+| className   | string                      | No       | ""                      | Additional CSS classes for styling customization.        |
+| autoFocus   | boolean                     | No       | false                   | Sets focus on the input automatically when true.         |

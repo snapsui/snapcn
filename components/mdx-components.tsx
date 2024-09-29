@@ -11,6 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Callout } from "@/components/callout";
 import RepoDownload from "@/components/repo-download";
 import TechStack from "@/components/tech-stack";
 import TemplatePreview from "@/components/template-preview";
@@ -49,6 +50,7 @@ const components = {
   TemplatePreview,
   Image,
   Tweet: ({ id }: { id: string }) => <TweetCard id={id} className="mx-auto" />,
+  Callout,
   ComponentPreview,
   ComponentSource: (props: any) => <ComponentSource {...props} />,
   ComponentInstallation: (props: any) => <ComponentInstallation {...props} />,

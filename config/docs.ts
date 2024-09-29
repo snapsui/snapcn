@@ -57,7 +57,32 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
-          title: "React.js",
+          title: "Vite",
+          href: "/docs/installation/vite",
+          items: [],
+        },
+        {
+          title: "Astro",
+          href: "/docs/installation/astro",
+          items: [],
+        },
+        {
+          title: "Remix",
+          href: "/docs/installation/remix",
+          items: [],
+        },
+        {
+          title: "Laravel",
+          href: "/docs/installation/laravel",
+          items: [],
+        },
+        {
+          title: "Gatsby",
+          href: "/docs/installation/gatsby",
+          items: [],
+        },
+        {
+          title: "React.js / Manual",
           href: "/docs/installation/react",
           items: [],
         },
@@ -76,25 +101,25 @@ export const docsConfig: DocsConfig = {
           title: "Phone Input",
           href: `/docs/snapui/snap-phone-input`,
           items: [],
-          label: ".",
+          label: "",
         },
         {
           title: "URL Input",
           href: `/docs/snapui/snap-url-input`,
           items: [],
-          label: ".",
+          label: "soon",
         },
         {
           title: "Amount Input",
           href: `/docs/snapui/snap-amount-input`,
           items: [],
-          label: ".",
+          label: "soon",
         },
         {
           title: "TextArea",
           href: `/docs/snapui/snap-textarea`,
           items: [],
-          label: ".",
+          label: "soon",
         },
         {
           title: "Select",
@@ -110,16 +135,16 @@ export const docsConfig: DocsConfig = {
         },
       ],
     },
-    {
-      title: "Components",
-      // items: [
-      //   {
-      //     title: "Marquee",
-      //     href: `/docs/components/marquee`,
-      //     items: [],
-      //     label: "",
-      //   },
-      // ],
-    },
+    // {
+    // title: "Components",
+    // items: [
+    //   {
+    //     title: "Marquee",
+    //     href: `/docs/components/marquee`,
+    //     items: [],
+    //     label: "",
+    //   },
+    // ],
+    // },
   ],
 };

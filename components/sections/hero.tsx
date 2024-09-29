@@ -49,13 +49,13 @@ export default async function Hero() {
                 <h1
                   className={cn(
                     "text-black dark:text-white",
-                    "relative mx-0 max-w-[43.5rem]  pt-5  md:mx-auto md:px-4 md:py-2",
+                    "relative mx-0 max-w-[50rem] pt-5 md:mx-auto md:px-4 md:py-2",
                     "text-left tracking-tighter text-balance md:text-center font-semibold",
                     "md:text-7xl lg:text-7xl sm:text-7xl text-5xl",
                     `animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
                   )}
                 >
-                  UI Component for Frontend Engineer
+                  Frontend Development at Lightning Speed
                 </h1>
               </div>
 

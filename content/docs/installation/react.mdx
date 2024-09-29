@@ -1,45 +1,63 @@
 ---
-title: React.js
-description: Install and configure Sanp UI for React.js
-published: true
+title: Manual Installation
+description: Add dependencies to your project manually.
 ---
 
 <Steps>
 
-### Information
+### Add Tailwind CSS
 
-This project and all components are written in **TypeScript**. We recommend using TypeScript for your project as well.
+Components are styled using Tailwind CSS. You need to install Tailwind CSS in your project.
+
+[Follow the Tailwind CSS installation instructions to get started.](https://tailwindcss.com/docs/installation)
 
 ### Add dependencies
 
 Add the following dependencies to your project:
 
 ```bash
-npm install tailwindcss@latest clsx tailwind-merge framer-motion
+npm install tailwindcss-animate class-variance-authority clsx tailwind-merge
+```
+
+### Add icon library
+
+If you're using the `default` style, install `lucide-react`:
+
+```bash
+npm install lucide-react
+```
+
+If you're using the `new-york` style, install `@radix-ui/react-icons`:
+
+```bash
+npm install @radix-ui/react-icons
 ```
 
 ### Configure path aliases
 
-```diff
-// tsconfig.json or jsconfig.json
+I use the `@` alias. This is how I configure it in tsconfig.json:
+
+```json {3-6} title="tsconfig.json"
 {
   "compilerOptions": {
-+   "baseUrl": ".",
-+   "paths": {
-+     "@/*": ["./*"]
-+   }
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    }
   }
 }
 ```
 
-The @ alias is a preference. You can use other aliases if you want.
+The `@` alias is a preference. You can use other aliases if you want.
+
+**If you use a different alias such as ~, you'll need to update import statements when adding components.**
 
 ### Configure tailwind.config.js
 
-Here's what `tailwind.config.js` file looks like:
+Here's what my `tailwind.config.js` file looks like:
 
-```typescript
-const { fontFamily } = require("tailwindcss/defaultTheme");
+```js title="tailwind.config.js"
+const { fontFamily } = require("tailwindcss/defaultTheme")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -114,14 +132,14 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-};
+}
 ```
 
 ### Configure styles
 
-Add the following to your styles/globals.css file.
+Add the following to your styles/globals.css file. You can learn more about using CSS variables for theming in the [theming section](/docs/theming).
 
-```css
+```css title="globals.css"
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -200,29 +218,26 @@ Add the following to your styles/globals.css file.
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings:
-      "rlig" 1,
-      "calt" 1;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 ```
 
 ### Add a cn helper
 
-Copy and paste the following code into your project.
+I use a `cn` helper to make it easier to conditionally add Tailwind CSS classes. Here's how I define it in `lib/utils.ts`:
 
-```typescript
-// lib/utils.ts
-import clsx, { ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+```ts title="lib/utils.ts"
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+  return twMerge(clsx(inputs))
 }
 ```
 
-### Install components
+### That's it
 
-You can now start adding [components](/snapui) to your project.
+You can now start adding components to your project.
 
 </Steps>

@@ -64,8 +64,8 @@ export function MobileNav() {
           <Icons.logo className="mr-2 size-4" />
           <span className="font-bold">{siteConfig.name}</span>
         </MobileLink>
-        <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-          <div className="flex flex-col space-y-3">
+        <ScrollArea className="my-4 h-[calc(100vh-6rem)]">
+          <div className="text-base flex flex-col space-y-3">
             {docsConfig.mainNav?.map(
               (item) =>
                 item.href && (
@@ -73,6 +73,7 @@ export function MobileNav() {
                     key={item.href}
                     href={item.href}
                     onOpenChange={setOpen}
+                    className="font-bold"
                   >
                     {item.title}
                   </MobileLink>
@@ -82,7 +83,7 @@ export function MobileNav() {
           <div className="flex flex-col space-y-2">
             {docsConfig.sidebarNav.map((item, index) => (
               <div key={index} className="flex flex-col space-y-3 pt-6">
-                <h4 className="font-medium">{item.title}</h4>
+                <h4 className="text-base font-medium">{item.title}</h4>
                 {item.items?.map((item) =>
                   !item.disabled && item.href ? (
                     <MobileLink
@@ -91,13 +92,13 @@ export function MobileNav() {
                       onOpenChange={setOpen}
                       onClick={() => item.event && posthog.capture(item.event)}
                       className={cn(
-                        "text-muted-foreground",
+                        "text-muted-foreground pl-2",
                         item.disabled && "cursor-not-allowed opacity-60",
                       )}
                     >
                       {item.title}
                       {item.label && (
-                        <span className="ml-2 rounded-md bg-[#FFBD7A] px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
+                        <span className="z-10 ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000]">
                           {item.label}
                         </span>
                       )}
@@ -106,13 +107,13 @@ export function MobileNav() {
                     <span
                       key={index}
                       className={cn(
-                        "text-muted-foreground",
+                        "text-base text-muted-foreground",
                         item.disabled && "cursor-not-allowed opacity-60",
                       )}
                     >
                       {item.title}
                       {item.label && (
-                        <span className="ml-2 rounded-md bg-muted px-1.5 py-0.5 text-xs leading-none text-muted-foreground no-underline group-hover:no-underline">
+                        <span className="z-10 ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000]">
                           {item.label}
                         </span>
                       )}
