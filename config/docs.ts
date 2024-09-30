@@ -119,7 +119,7 @@ export const docsConfig: DocsConfig = {
           title: "TextArea",
           href: `/docs/snapui/snap-textarea`,
           items: [],
-          label: "soon",
+          label: "",
         },
         {
           title: "Select",
@@ -127,24 +127,18 @@ export const docsConfig: DocsConfig = {
           items: [],
           label: "",
         },
+      ],
+    },
+    {
+      title: "Components",
+      items: [
         {
           title: "Float Button",
-          href: `/docs/snapui/snap-float-button`,
+          href: `/docs/components/snap-float-button`,
           items: [],
           label: "",
         },
       ],
     },
-    // {
-    // title: "Components",
-    // items: [
-    //   {
-    //     title: "Marquee",
-    //     href: `/docs/components/marquee`,
-    //     items: [],
-    //     label: "",
-    //   },
-    // ],
-    // },
   ],
 };

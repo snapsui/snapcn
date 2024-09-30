@@ -1,4 +1,3 @@
-import posthog from "posthog-js";
 import { z } from "zod";
 
 const eventSchema = z.object({
@@ -20,6 +19,5 @@ export type Event = z.infer<typeof eventSchema>;
 export function trackEvent(input: Event): void {
   const event = eventSchema.parse(input);
   if (event) {
-    posthog.capture(event.name, event.properties);
   }
 }

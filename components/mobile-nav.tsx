@@ -3,7 +3,6 @@
 import * as React from "react";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
-import posthog from "posthog-js";
 
 import { docsConfig } from "@/config/docs";
 import { siteConfig } from "@/config/site";
@@ -90,7 +89,6 @@ export function MobileNav() {
                       key={item.href}
                       href={item.href}
                       onOpenChange={setOpen}
-                      onClick={() => item.event && posthog.capture(item.event)}
                       className={cn(
                         "text-muted-foreground pl-2",
                         item.disabled && "cursor-not-allowed opacity-60",

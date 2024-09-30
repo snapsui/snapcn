@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import posthog from "posthog-js";
 
 import AnimatedShinyText from "@/registry/components/magicui/animated-shiny-text";
 import WordPullUp from "@/registry/components/magicui/word-pull-up";
@@ -12,7 +11,6 @@ export default function SidebarCTA() {
     <Link
       href="https://pro.magicui.design"
       target="_blank"
-      onClick={() => posthog.capture("sidebar_cta_clicked")}
       className="group my-20 flex w-full flex-col items-center justify-center gap-2 rounded-xl bg-indigo-600 p-4 text-center text-lg font-medium leading-tight text-white"
     >
       <WordPullUp words="Looking for templates?" className="text-4xl" />

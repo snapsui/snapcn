@@ -31,7 +31,7 @@ const nextConfig = {
       },
       {
         source: "/components",
-        destination: "/docs/components/snap-input",
+        destination: "/docs/components/snap-float-button",
         permanent: true,
       },
       {
@@ -51,7 +51,7 @@ const nextConfig = {
       },
       {
         source: "/docs/components",
-        destination: "/docs/components/snap-input",
+        destination: "/docs/components/snap-float-button",
         permanent: true,
       },
       {

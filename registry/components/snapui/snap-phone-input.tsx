@@ -78,9 +78,11 @@ interface Country {
 const PhoneCountryPickerDropdownButton = ({
   value,
   onChange,
+  onCountrySelect,
 }: {
   value: string;
   onChange: (countryCode: string) => void;
+  onCountrySelect: () => void;
 }) => {
   const [searchQuery, setSearchQuery] = React.useState("");
   const inputRef = React.useRef<HTMLInputElement | null>(null);
@@ -99,6 +101,7 @@ const PhoneCountryPickerDropdownButton = ({
     const country = countries.find(({ countryCode }) => countryCode === value);
     setSelectedCountry(country);
     onChange(countryCode);
+    onCountrySelect();
   };
 
   const filteredItems = React.useMemo(
@@ -112,10 +115,10 @@ const PhoneCountryPickerDropdownButton = ({
   );
 
   React.useEffect(() => {
-    if (inputRef.current) {
+    if (inputRef && inputRef.current) {
       inputRef.current.focus();
     }
-  }, []);
+  }, [inputRef]);
 
   return (
     <Select value={value} onValueChange={(value: string) => handleClick(value)}>
@@ -162,6 +165,14 @@ export interface PhoneInputProps
 
 const SnapPhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
   ({ className, placeholder, value, onChange, autoFocus, ...props }) => {
+    const inputRef = React.useRef<HTMLInputElement>(null);
+
+    const handleCountrySelect = React.useCallback(() => {
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
+    }, [value]);
+
     return (
       <div className="flex rounded-lg bg-background">
         <PhoneInput
@@ -172,7 +183,12 @@ const SnapPhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
           international={true}
           withCountryCallingCode={true}
           inputComponent={PhoneInputComponent}
-          countrySelectComponent={PhoneCountryPickerDropdownButton}
+          countrySelectComponent={(props) => (
+            <PhoneCountryPickerDropdownButton
+              {...props}
+              onCountrySelect={handleCountrySelect}
+            />
+          )}
           className={cn("contents", className)}
           {...props}
         />

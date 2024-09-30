@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
-import posthog from "posthog-js";
 
 import { docsConfig } from "@/config/docs";
 import { siteConfig } from "@/config/site";
@@ -26,7 +25,6 @@ export function MainNav() {
           <Link
             key={item.href}
             href={item.href!}
-            onClick={() => item.event && posthog.capture(item.event)}
             target={item.external ? "_blank" : undefined}
             aria-label={item.title}
             className={cn(
