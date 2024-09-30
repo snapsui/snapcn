@@ -1,0 +1,67 @@
+---
+title: Amount Input
+date: 2024-09-21
+description: A component that allows users to input an amount with a currency symbol.
+author: jeet1desai
+published: true
+---
+
+<ComponentPreview name="snap-amount-input-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx snapcn add snap-amount-input
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install dependency.</Step>
+
+```bash
+npm install @radix-ui/react-select
+```
+
+<Step>`Snap Input` Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="snap-input" />
+
+<Step>`Snap Select` Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="snap-select" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="snap-amount-input" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+### Props
+
+| Prop             | Type                             | Default | Description                                                     |
+| ---------------- | -------------------------------- | ------- | --------------------------------------------------------------- |
+| codeValue        | string                           | -       | The currency code to be displayed and selected in the dropdown. |
+| onCurrencyChange | (value: string) => void          | -       | Callback function triggered when a currency is selected.        |
+| value            | number                           | string  | -                                                               |
+| onChange         | event: React.ChangeEvent => void | -       | Callback function triggered when the input value changes.       |
+| placeholder      | string                           | -       | Placeholder text for the input field.                           |
+| disabled         | boolean                          | false   | If true, the input will be disabled.                            |
+| className        | string                           | -       | Additional CSS classes to apply to the component.               |

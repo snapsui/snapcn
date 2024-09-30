@@ -8,6 +8,18 @@ const ui: Registry = {
     type: "components:snapui",
     files: ["registry/components/snapui/snap-input.tsx"],
   },
+  "snap-amount-input": {
+    name: "snap-amount-input",
+    type: "components:snapui",
+    registryDependencies: ["shadcn:snap-input", "shadcn:snap-select"],
+    files: ["registry/components/snapui/snap-amount-input.tsx"],
+  },
+  "snap-url-input": {
+    name: "snap-url-input",
+    type: "components:snapui",
+    registryDependencies: ["shadcn:snap-input"],
+    files: ["registry/components/snapui/snap-url-input.tsx"],
+  },
   "snap-phone-input": {
     name: "snap-phone-input",
     type: "components:snapui",
@@ -328,6 +340,24 @@ const example: Registry = {
     files: ["registry/components/example/snap-input-demo-2.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-input-demo-2"),
+    ),
+  },
+  "snap-amount-input-demo": {
+    name: "snap-amount-input-demo",
+    type: "components:example",
+    registryDependencies: [],
+    files: ["registry/components/example/snap-amount-input-demo.tsx"],
+    component: React.lazy(
+      () => import("@/registry/components/example/snap-amount-input-demo"),
+    ),
+  },
+  "snap-url-input-demo": {
+    name: "snap-url-input-demo",
+    type: "components:example",
+    registryDependencies: [],
+    files: ["registry/components/example/snap-url-input-demo.tsx"],
+    component: React.lazy(
+      () => import("@/registry/components/example/snap-url-input-demo"),
     ),
   },
   "snap-phone-input-demo": {

@@ -79,7 +79,7 @@ export async function GET(req: Request) {
                 ...font("Inter 700"),
               }}
             >
-              Magic UI
+              Snap UI
             </span>
           </h1>
 

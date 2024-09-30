@@ -107,13 +107,13 @@ export const docsConfig: DocsConfig = {
           title: "URL Input",
           href: `/docs/snapui/snap-url-input`,
           items: [],
-          label: "soon",
+          label: "",
         },
         {
           title: "Amount Input",
           href: `/docs/snapui/snap-amount-input`,
           items: [],
-          label: "soon",
+          label: "",
         },
         {
           title: "TextArea",

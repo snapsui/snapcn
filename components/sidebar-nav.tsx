@@ -111,7 +111,7 @@ export function DocsSidebarNavItems({
             key={index}
             href={item.href}
             className={cn(
-              "text-base group relative flex w-full items-center rounded-md border border-transparent px-3 py-1",
+              "text-base group relative flex w-full items-center rounded-md border border-transparent px-2 py-1",
               item.disabled && "cursor-not-allowed opacity-60",
               pathname === item.href
                 ? "font-medium text-foreground"
@@ -123,7 +123,7 @@ export function DocsSidebarNavItems({
             {pathname === item.href && (
               <motion.div
                 layoutId={groupId}
-                className="absolute inset-0 rounded-r-md border-l-2 border-neutral-300 bg-neutral-100 dark:border-neutral-600 dark:bg-neutral-800"
+                className="absolute inset-0 rounded-md border-neutral-300 bg-neutral-100 dark:border-neutral-600 dark:bg-neutral-800"
                 initial={false}
                 transition={{
                   type: "spring",
@@ -134,6 +134,12 @@ export function DocsSidebarNavItems({
                 }}
               />
             )}
+            <div
+              className={cn(
+                "relative z-10 mr-2 h-5 w-0.5",
+                pathname === item.href ? "bg-foreground" : "",
+              )}
+            />
             <span className="relative z-10 shrink-0">{item.title}</span>
             {item.label && (
               <span className="z-10 ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000]">

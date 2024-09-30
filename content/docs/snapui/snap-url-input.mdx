@@ -1,0 +1,59 @@
+---
+title: URL Input
+date: 2024-09-21
+description: A component that allows users to input a URL.
+author: jeet1desai
+published: true
+---
+
+<ComponentPreview name="snap-url-input-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx snapcn add snap-url-input
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>`Snap Input` Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="snap-input" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="snap-url-input" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+
+| Prop        | Type            | Required | Default | Description                                           |
+| ----------- | --------------- | -------- | ------- | ----------------------------------------------------- |
+| className   | string          | No       |         | Additional CSS classes to apply to the input wrapper. |
+| type        | string          | No       | "text"  | The type of the input element.                        |
+| leftIcon    | React.ReactNode | No       |         | Icon to display on the left side of the input.        |
+| rightIcon   | React.ReactNode | No       |         | Icon to display on the right side of the input.       |
+| hint        | string          | No       |         | Hint text to display below the input.                 |
+| disabled    | boolean         | No       | false   | Whether the input is disabled.                        |
+| placeholder | string          | No       |         | Placeholder text for the input.                       |
+| prefix      | string          | No       |         | Text to display as a prefix before the input.         |
+| ref         | React.Ref       | No       |         | Ref to the underlying input element.                  |

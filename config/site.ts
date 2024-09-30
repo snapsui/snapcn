@@ -7,7 +7,7 @@ export const siteConfig = {
   links: {
     twitter: "https://x.com/jeet1desai",
     discord: "https://discord.gg/VWH6J2Hupz",
-    github: "",
+    github: "https://github.com/snapsui/snapcn",
     instagram: "",
   },
   keywords: [
