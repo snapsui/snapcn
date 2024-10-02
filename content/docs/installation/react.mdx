@@ -21,8 +21,6 @@ npm install tailwindcss-animate class-variance-authority clsx tailwind-merge
 
 ### Add icon library
 
-If you're using the `default` style, install `lucide-react`:
-
 ```bash
 npm install lucide-react
 ```
@@ -57,7 +55,7 @@ The `@` alias is a preference. You can use other aliases if you want.
 Here's what my `tailwind.config.js` file looks like:
 
 ```js title="tailwind.config.js"
-const { fontFamily } = require("tailwindcss/defaultTheme")
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -132,7 +130,7 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
 ```
 
 ### Configure styles
@@ -218,7 +216,9 @@ Add the following to your styles/globals.css file. You can learn more about usin
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 }
 ```
@@ -228,11 +228,11 @@ Add the following to your styles/globals.css file. You can learn more about usin
 I use a `cn` helper to make it easier to conditionally add Tailwind CSS classes. Here's how I define it in `lib/utils.ts`:
 
 ```ts title="lib/utils.ts"
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 ```
 

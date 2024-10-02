@@ -1,8 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { PlusIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
+import { PlusIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 

@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import { type DialogProps } from "@radix-ui/react-dialog";
-import { CircleIcon, FileIcon } from "@radix-ui/react-icons";
+import { CircleIcon } from "@radix-ui/react-icons";
 
 import { docsConfig } from "@/config/docs";
 import { cn } from "@/lib/utils";
@@ -68,22 +68,6 @@ export function CommandMenu({ ...props }: DialogProps) {
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Links">
-            {docsConfig.mainNav
-              .filter((navitem) => !navitem.external)
-              .map((navItem) => (
-                <CommandItem
-                  key={navItem.href}
-                  value={navItem.title}
-                  onSelect={() => {
-                    runCommand(() => router.push(navItem.href as string));
-                  }}
-                >
-                  <FileIcon className="mr-2 size-4" />
-                  {navItem.title}
-                </CommandItem>
-              ))}
-          </CommandGroup>
           {docsConfig.sidebarNav.map((group) => {
             return (
               <CommandGroup key={group.title} heading={group.title}>

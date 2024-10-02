@@ -44,26 +44,16 @@ const ui: Registry = {
     registryDependencies: ["shadcn:snap-input"],
     files: ["registry/components/snapui/snap-select.tsx"],
   },
-  "snap-float-button": {
-    name: "snap-float-button",
-    type: "components:snapui",
-    files: ["registry/components/snapui/snap-float-button.tsx"],
-  },
   "snap-button": {
     name: "snap-button",
     type: "components:snapui",
     dependencies: ["@radix-ui/react-slot", "class-variance-authority"],
     files: ["registry/components/snapui/snap-button.tsx"],
   },
-  "magic-card": {
-    name: "magic-card",
-    type: "components:magicui",
-    files: ["registry/components/magicui/magic-card.tsx"],
-  },
-  "neon-gradient-card": {
-    name: "neon-gradient-card",
-    type: "components:magicui",
-    files: ["registry/components/magicui/neon-gradient-card.tsx"],
+  "snap-float-button": {
+    name: "snap-float-button",
+    type: "components:snapui",
+    files: ["registry/components/snapui/snap-float-button.tsx"],
   },
   meteors: {
     name: "meteors",
@@ -111,7 +101,6 @@ const ui: Registry = {
   "bento-grid": {
     name: "bento-grid",
     type: "components:magicui",
-    dependencies: ["@radix-ui/react-icons"],
     registryDependencies: ["shadcn:button"],
     files: ["registry/components/magicui/bento-grid.tsx"],
   },
@@ -145,11 +134,6 @@ const ui: Registry = {
     type: "components:magicui",
     files: ["registry/components/magicui/animated-beam.tsx"],
   },
-  "text-reveal": {
-    name: "text-reveal",
-    type: "components:magicui",
-    files: ["registry/components/magicui/text-reveal.tsx"],
-  },
   "hyper-text": {
     name: "hyper-text",
     type: "components:magicui",
@@ -180,35 +164,15 @@ const ui: Registry = {
     type: "components:magicui",
     files: ["registry/components/magicui/avatar-circles.tsx"],
   },
-  "word-pull-up": {
-    name: "word-pull-up",
-    type: "components:magicui",
-    files: ["registry/components/magicui/word-pull-up.tsx"],
-  },
   "typing-animation": {
     name: "typing-animation",
     type: "components:magicui",
     files: ["registry/components/magicui/typing-animation.tsx"],
   },
-  "blur-in": {
-    name: "blur-in",
-    type: "components:magicui",
-    files: ["registry/components/magicui/blur-in.tsx"],
-  },
-  "letter-pullup": {
-    name: "letter-pullup",
-    type: "components:magicui",
-    files: ["registry/components/magicui/letter-pullup.tsx"],
-  },
   "sparkles-text": {
     name: "sparkles-text",
     type: "components:magicui",
     files: ["registry/components/magicui/sparkles-text.tsx"],
-  },
-  "flip-text": {
-    name: "flip-text",
-    type: "components:magicui",
-    files: ["registry/components/magicui/flip-text.tsx"],
   },
   "icon-cloud": {
     name: "icon-cloud",
@@ -221,71 +185,21 @@ const ui: Registry = {
     type: "components:magicui",
     files: ["registry/components/magicui/gradual-spacing.tsx"],
   },
-  "word-fade-in": {
-    name: "word-fade-in",
-    type: "components:magicui",
-    files: ["registry/components/magicui/word-fade-in.tsx"],
-  },
   "scroll-based-velocity": {
     name: "scroll-based-velocity",
     type: "components:magicui",
     files: ["registry/components/magicui/scroll-based-velocity.tsx"],
-  },
-  "fade-text": {
-    name: "fade-text",
-    type: "components:magicui",
-    files: ["registry/components/magicui/fade-text.tsx"],
   },
   "shiny-button": {
     name: "shiny-button",
     type: "components:magicui",
     files: ["registry/components/magicui/shiny-button.tsx"],
   },
-  "box-reveal": {
-    name: "box-reveal",
-    type: "components:magicui",
-    files: ["registry/components/magicui/box-reveal.tsx"],
-  },
-  "shine-border": {
-    name: "shine-border",
-    type: "components:magicui",
-    files: ["registry/components/magicui/shine-border.tsx"],
-  },
-  "animated-circular-progress-bar": {
-    name: "animated-circular-progress-bar",
-    type: "components:magicui",
-    files: ["registry/components/magicui/animated-circular-progress-bar.tsx"],
-  },
   confetti: {
     name: "confetti",
     type: "components:magicui",
     dependencies: ["canvas-confetti", "@types/canvas-confetti"],
     files: ["registry/components/magicui/confetti.tsx"],
-  },
-  "animated-subscribe-button": {
-    name: "animated-subscribe-button",
-    type: "components:magicui",
-    files: ["registry/components/magicui/animated-subscribe-button.tsx"],
-  },
-  "cool-mode": {
-    name: "cool-mode",
-    type: "components:magicui",
-    files: ["registry/components/magicui/cool-mode.tsx"],
-  },
-  "pulsating-button": {
-    name: "pulsating-button",
-    type: "components:magicui",
-    files: ["registry/components/magicui/pulsating-button.tsx"],
-  },
-  "file-tree": {
-    name: "file-tree",
-    type: "components:magicui",
-    files: ["registry/components/magicui/file-tree.tsx"],
-  },
-  "blur-fade": {
-    name: "blur-fade",
-    type: "components:magicui",
-    files: ["registry/components/magicui/blur-fade.tsx"],
   },
   "rainbow-button": {
     name: "rainbow-button",
@@ -298,7 +212,7 @@ const example: Registry = {
   "snap-input-demo-1": {
     name: "snap-input-demo-1",
     type: "components:example",
-    registryDependencies: ["snap-input"],
+    registryDependencies: [],
     files: ["registry/components/example/snap-input-demo-1.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-input-demo-1"),
@@ -307,7 +221,7 @@ const example: Registry = {
   "snap-input-demo-2": {
     name: "snap-input-demo-2",
     type: "components:example",
-    registryDependencies: ["snap-input"],
+    registryDependencies: [],
     files: ["registry/components/example/snap-input-demo-2.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-input-demo-2"),
@@ -316,7 +230,7 @@ const example: Registry = {
   "snap-amount-input-demo": {
     name: "snap-amount-input-demo",
     type: "components:example",
-    registryDependencies: ["snap-amount-input"],
+    registryDependencies: [],
     files: ["registry/components/example/snap-amount-input-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-amount-input-demo"),
@@ -325,7 +239,7 @@ const example: Registry = {
   "snap-url-input-demo": {
     name: "snap-url-input-demo",
     type: "components:example",
-    registryDependencies: ["snap-url-input"],
+    registryDependencies: [],
     files: ["registry/components/example/snap-url-input-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-url-input-demo"),
@@ -334,7 +248,7 @@ const example: Registry = {
   "snap-phone-input-demo": {
     name: "snap-phone-input-demo",
     type: "components:example",
-    registryDependencies: ["snap-phone-input"],
+    registryDependencies: [],
     files: ["registry/components/example/snap-phone-input-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-phone-input-demo"),
@@ -343,7 +257,7 @@ const example: Registry = {
   "snap-textarea-demo": {
     name: "snap-textarea-demo",
     type: "components:example",
-    registryDependencies: ["snap-textarea"],
+    registryDependencies: [],
     files: ["registry/components/example/snap-textarea-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-textarea-demo"),
@@ -352,7 +266,7 @@ const example: Registry = {
   "snap-select-demo": {
     name: "snap-select-demo",
     type: "components:example",
-    registryDependencies: ["snap-select"],
+    registryDependencies: [],
     files: ["registry/components/example/snap-select-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-select-demo"),
@@ -361,7 +275,7 @@ const example: Registry = {
   "snap-button-demo": {
     name: "snap-button-demo",
     type: "components:example",
-    registryDependencies: ["snap-button"],
+    registryDependencies: [],
     files: ["registry/components/example/snap-button-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-button-demo"),
@@ -374,23 +288,6 @@ const example: Registry = {
     files: ["registry/components/example/snap-float-button-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-float-button-demo"),
-    ),
-  },
-  "magic-card-demo": {
-    name: "magic-card-demo",
-    type: "components:example",
-    registryDependencies: ["magic-card"],
-    files: ["registry/components/example/magic-card-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/magic-card-demo"),
-    ),
-  },
-  "neon-gradient-card-demo": {
-    name: "neon-gradient-card-demo",
-    type: "components:example",
-    files: ["registry/components/example/neon-gradient-card-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/neon-gradient-card-demo"),
     ),
   },
   "meteors-demo": {
@@ -532,7 +429,6 @@ const example: Registry = {
       "shadcn:command",
       "shadcn:calendar",
     ],
-    dependencies: ["@radix-ui/react-icons"],
     files: ["registry/components/example/bento-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/bento-demo"),
@@ -542,7 +438,6 @@ const example: Registry = {
     name: "bento-demo-vertical",
     type: "components:example",
     registryDependencies: ["bento-grid"],
-    dependencies: ["@radix-ui/react-icons"],
     files: ["registry/components/example/bento-demo-vertical.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/bento-demo-vertical"),
@@ -570,7 +465,6 @@ const example: Registry = {
     name: "animated-shiny-text-demo",
     type: "components:example",
     registryDependencies: ["animated-shiny-text"],
-    dependencies: ["@radix-ui/react-icons"],
     files: ["registry/components/example/animated-shiny-text-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/animated-shiny-text-demo"),
@@ -599,7 +493,6 @@ const example: Registry = {
     name: "animated-beam-demo",
     type: "components:example",
     registryDependencies: ["animated-beam"],
-    dependencies: ["@radix-ui/react-icons"],
     files: ["registry/components/example/animated-beam-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/animated-beam-demo"),
@@ -644,15 +537,6 @@ const example: Registry = {
         import("@/registry/components/example/animated-beam-multiple-outputs"),
     ),
   },
-  "text-reveal-demo": {
-    name: "text-reveal-demo",
-    type: "components:example",
-    registryDependencies: ["text-reveal"],
-    files: ["registry/components/example/text-reveal-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/text-reveal-demo"),
-    ),
-  },
   "animated-gradient-text-demo": {
     name: "animated-gradient-text-demo",
     type: "components:example",
@@ -667,7 +551,6 @@ const example: Registry = {
     name: "orbiting-circles-demo",
     type: "components:example",
     registryDependencies: ["orbiting-circles"],
-    dependencies: ["@radix-ui/react-icons"],
     files: ["registry/components/example/orbiting-circles-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/orbiting-circles-demo"),
@@ -727,15 +610,6 @@ const example: Registry = {
       () => import("@/registry/components/example/avatar-circles-demo"),
     ),
   },
-  "word-pull-up-demo": {
-    name: "word-pull-up-demo",
-    type: "components:example",
-    registryDependencies: ["word-pull-up"],
-    files: ["registry/components/example/word-pull-up-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/word-pull-up-demo"),
-    ),
-  },
   "typing-animation-demo": {
     name: "typing-animation-demo",
     type: "components:example",
@@ -745,15 +619,6 @@ const example: Registry = {
       () => import("@/registry/components/example/typing-animation-demo"),
     ),
   },
-  "blur-in-demo": {
-    name: "blur-in-demo",
-    type: "components:example",
-    registryDependencies: ["blur-in"],
-    files: ["registry/components/example/blur-in-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/blur-in-demo"),
-    ),
-  },
   "scroll-based-velocity-demo": {
     name: "scroll-based-velocity-demo",
     type: "components:example",
@@ -761,24 +626,6 @@ const example: Registry = {
     files: ["registry/components/example/scroll-based-velocity-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/scroll-based-velocity-demo"),
-    ),
-  },
-  "letter-pullup-demo": {
-    name: "letter-pullup-demo",
-    type: "components:example",
-    registryDependencies: ["letter-pullup"],
-    files: ["registry/components/example/letter-pullup-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/letter-pullup-demo"),
-    ),
-  },
-  "flip-text-demo": {
-    name: "flip-text-demo",
-    type: "components:example",
-    registryDependencies: ["flip-text"],
-    files: ["registry/components/example/flip-text-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/flip-text-demo"),
     ),
   },
   "sparkles-text-demo": {
@@ -814,65 +661,12 @@ const example: Registry = {
       () => import("@/registry/components/example/gradual-spacing-demo"),
     ),
   },
-  "word-fade-in-demo": {
-    name: "word-fade-in-demo",
-    type: "components:example",
-    files: ["registry/components/example/word-fade-in-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/word-fade-in-demo"),
-    ),
-  },
-  "fade-text-demo": {
-    name: "fade-text-demo",
-    type: "components:example",
-    files: ["registry/components/example/fade-text-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/fade-text-demo"),
-    ),
-  },
   "shiny-button-demo": {
     name: "shiny-button-demo",
     type: "components:example",
     files: ["registry/components/example/shiny-button-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/shiny-button-demo"),
-    ),
-  },
-  "box-reveal-demo": {
-    name: "box-reveal-demo",
-    type: "components:example",
-    files: ["registry/components/example/box-reveal-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/box-reveal-demo"),
-    ),
-  },
-  "animated-circular-progress-bar-demo": {
-    name: "animated-circular-progress-bar-demo",
-    type: "components:example",
-    files: [
-      "registry/components/example/animated-circular-progress-bar-demo.tsx",
-    ],
-    component: React.lazy(
-      () =>
-        import(
-          "@/registry/components/example/animated-circular-progress-bar-demo"
-        ),
-    ),
-  },
-  "shine-border-demo": {
-    name: "shine-border-demo",
-    type: "components:example",
-    files: ["registry/components/example/shine-border-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/shine-border-demo"),
-    ),
-  },
-  "shine-border-demo-2": {
-    name: "shine-border-demo-2",
-    type: "components:example",
-    files: ["registry/components/example/shine-border-demo-2.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/shine-border-demo-2"),
     ),
   },
   "confetti-demo": {
@@ -937,47 +731,6 @@ const example: Registry = {
     files: ["registry/components/example/confetti-emoji.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/confetti-emoji"),
-    ),
-  },
-  "animated-subscribe-button-demo": {
-    name: "animated-subscribe-button-demo",
-    type: "components:example",
-    files: ["registry/components/example/animated-subscribe-button-demo.tsx"],
-    component: React.lazy(
-      () =>
-        import("@/registry/components/example/animated-subscribe-button-demo"),
-    ),
-  },
-  "cool-mode-demo": {
-    name: "cool-mode-demo",
-    type: "components:example",
-    files: ["registry/components/example/cool-mode-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/cool-mode-demo"),
-    ),
-  },
-  "cool-mode-custom": {
-    name: "cool-mode-custom",
-    type: "components:example",
-    files: ["registry/components/example/cool-mode-custom.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/cool-mode-custom"),
-    ),
-  },
-  "pulsating-button-demo": {
-    name: "pulsating-button-demo",
-    type: "components:example",
-    files: ["registry/components/example/pulsating-button-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/pulsating-button-demo"),
-    ),
-  },
-  "file-tree-demo": {
-    name: "file-tree-demo",
-    type: "components:example",
-    files: ["registry/components/example/file-tree-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/file-tree-demo"),
     ),
   },
   "blur-fade-demo": {

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { CheckIcon, CopyIcon } from "@radix-ui/react-icons";
+import { CheckIcon, CopyIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
