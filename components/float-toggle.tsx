@@ -60,16 +60,6 @@ export const FloatToggle = React.forwardRef<
             </motion.div>
           </Link>
 
-          <Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
-            <motion.div
-              className="cursor-pointer flex items-center justify-center relative w-12 h-12 rounded-full bg-primary shadow-lg mb-2 ml-2 mr-2"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <GitHubLogoIcon className="text-background size-[1.2rem]" />
-            </motion.div>
-          </Link>
-
           <Link
             href={siteConfig.links.discord}
             target="_blank"
