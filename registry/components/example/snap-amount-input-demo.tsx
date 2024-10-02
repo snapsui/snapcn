@@ -4,7 +4,7 @@ import { SnapAmountInput } from "@/components/snapui/snap-amount-input";
 
 export default function SnapAmountInputDemo() {
   const [currency, setCurrency] = React.useState("");
-  const [amount, setAmount] = React.useState(0.0);
+  const [amount, setAmount] = React.useState(0);
   return (
     <SnapAmountInput
       codeValue={currency}

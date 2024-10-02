@@ -3,6 +3,7 @@ import { allDocs } from "@/.contentlayer/generated";
 import { compareDesc } from "date-fns";
 import { ChevronRight } from "lucide-react";
 
+import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import AnimatedShinyText from "@/registry/components/magicui/animated-shiny-text";
@@ -76,11 +77,26 @@ export default async function Hero() {
                         size: "lg",
                       }),
                       "gap-2 whitespace-pre md:flex",
-                      "group relative w-full gap-1 rounded-lg text-sm font-semibold tracking-tighter ring-offset-inherit transition-all duration-150 ease-in-out hover:ring-2 hover:ring-black hover:ring-offset-2 hover:ring-offset-current dark:hover:ring-neutral-50",
+                      "group relative w-[216px] gap-1 rounded-lg text-sm font-semibold tracking-tighter ring-offset-inherit transition-all duration-150 ease-in-out hover:ring-2 hover:ring-black hover:ring-offset-2 hover:ring-offset-current dark:hover:ring-neutral-50",
                     )}
                   >
                     Browse Components
                     <ChevronRight className="ml-1  size-4 shrink-0 transition-all duration-300 ease-out group-hover:translate-x-1" />
+                  </Link>
+                  <Link
+                    href={siteConfig.links.calcom}
+                    className={cn(
+                      buttonVariants({
+                        size: "lg",
+                        variant: "outline",
+                      }),
+                      "gap-2 whitespace-pre md:flex",
+                      "w-[216px] group relative gap-1 overflow-hidden rounded-xl text-sm font-semibold tracking-tighter transition-all duration-150 ease-in-out hover:ring-2 hover:ring-neutral-300 hover:ring-offset-2 hover:ring-offset-inherit dark:hover:ring-black dark:hover:ring-offset-black ",
+                    )}
+                    target="_blank"
+                  >
+                    Hire Me
+                    <ChevronRight className="ml-1 size-4 shrink-0 transition-all duration-300 ease-out group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>

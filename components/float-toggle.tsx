@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import {
+  CalendarIcon,
   DiscordLogoIcon,
   GitHubLogoIcon,
   MoonIcon,
@@ -49,6 +50,16 @@ export const FloatToggle = React.forwardRef<
           animate={{ opacity: isExpanded ? 1 : 0, y: isExpanded ? 0 : 10 }}
           transition={{ duration: 0.3, delay: 0.1 }}
         >
+          <Link href={siteConfig.links.calcom} target="_blank" rel="noreferrer">
+            <motion.div
+              className="cursor-pointer flex items-center justify-center relative w-12 h-12 rounded-full bg-primary shadow-lg mb-2 ml-2 mr-2"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <CalendarIcon className="text-background size-[1.2rem]" />
+            </motion.div>
+          </Link>
+
           <Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
             <motion.div
               className="cursor-pointer flex items-center justify-center relative w-12 h-12 rounded-full bg-primary shadow-lg mb-2 ml-2 mr-2"

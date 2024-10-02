@@ -22,7 +22,7 @@ const computedFields = {
   image: {
     type: "string",
     resolve: (post: any) =>
-      `${process.env.NEXT_PUBLIC_APP_URL}/api/og?title=${encodeURI(post.title)}`,
+      `${process.env.NEXT_PUBLIC_APP_URL}/og?title=${encodeURI(post.title)}`,
   },
   slug: {
     type: "string",
@@ -43,7 +43,7 @@ const computedFields = {
         dateModified: doc.date,
         description: doc.summary,
         image: doc.image,
-        url: `https://magicui.design/${doc._raw.flattenedPath}`,
+        url: `https://snapcn.dev/${doc._raw.flattenedPath}`,
         author: {
           "@type": "Person",
           name: doc.author,
@@ -108,7 +108,7 @@ export const Showcase = defineDocumentType(() => ({
           dateModified: doc.date,
           description: doc.summary,
           image: doc.image,
-          url: `https://magicui.design/${doc._raw.flattenedPath}`,
+          url: `https://snapcn.dev/${doc._raw.flattenedPath}`,
           author: {
             "@type": "Person",
             name: doc.author,

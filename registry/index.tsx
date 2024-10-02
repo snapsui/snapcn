@@ -49,6 +49,12 @@ const ui: Registry = {
     type: "components:snapui",
     files: ["registry/components/snapui/snap-float-button.tsx"],
   },
+  "snap-button": {
+    name: "snap-button",
+    type: "components:snapui",
+    dependencies: ["@radix-ui/react-slot", "class-variance-authority"],
+    files: ["registry/components/snapui/snap-button.tsx"],
+  },
   "magic-card": {
     name: "magic-card",
     type: "components:magicui",
@@ -64,20 +70,10 @@ const ui: Registry = {
     type: "components:magicui",
     files: ["registry/components/magicui/meteors.tsx"],
   },
-  "grid-pattern": {
-    name: "grid-pattern",
-    type: "components:magicui",
-    files: ["registry/components/magicui/grid-pattern.tsx"],
-  },
   "dot-pattern": {
     name: "dot-pattern",
     type: "components:magicui",
     files: ["registry/components/magicui/dot-pattern.tsx"],
-  },
-  "flickering-grid": {
-    name: "flickering-grid",
-    type: "components:magicui",
-    files: ["registry/components/magicui/flickering-grid.tsx"],
   },
   "hero-video-dialog": {
     name: "hero-video-dialog",
@@ -129,16 +125,6 @@ const ui: Registry = {
     type: "components:magicui",
     files: ["registry/components/magicui/number-ticker.tsx"],
   },
-  ripple: {
-    name: "ripple",
-    type: "components:magicui",
-    files: ["registry/components/magicui/ripple.tsx"],
-  },
-  "retro-grid": {
-    name: "retro-grid",
-    type: "components:magicui",
-    files: ["registry/components/magicui/retro-grid.tsx"],
-  },
   "animated-list": {
     name: "animated-list",
     type: "components:magicui",
@@ -148,11 +134,6 @@ const ui: Registry = {
     name: "animated-shiny-text",
     type: "components:magicui",
     files: ["registry/components/magicui/animated-shiny-text.tsx"],
-  },
-  "animated-grid-pattern": {
-    name: "animated-grid-pattern",
-    type: "components:magicui",
-    files: ["registry/components/magicui/animated-grid-pattern.tsx"],
   },
   "border-beam": {
     name: "border-beam",
@@ -306,16 +287,6 @@ const ui: Registry = {
     type: "components:magicui",
     files: ["registry/components/magicui/blur-fade.tsx"],
   },
-  safari: {
-    name: "safari",
-    type: "components:magicui",
-    files: ["registry/components/magicui/safari.tsx"],
-  },
-  "iphone-15-pro": {
-    name: "iphone-15-pro",
-    type: "components:magicui",
-    files: ["registry/components/magicui/iphone-15-pro.tsx"],
-  },
   "rainbow-button": {
     name: "rainbow-button",
     type: "components:magicui",
@@ -327,7 +298,7 @@ const example: Registry = {
   "snap-input-demo-1": {
     name: "snap-input-demo-1",
     type: "components:example",
-    registryDependencies: [],
+    registryDependencies: ["snap-input"],
     files: ["registry/components/example/snap-input-demo-1.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-input-demo-1"),
@@ -336,7 +307,7 @@ const example: Registry = {
   "snap-input-demo-2": {
     name: "snap-input-demo-2",
     type: "components:example",
-    registryDependencies: [],
+    registryDependencies: ["snap-input"],
     files: ["registry/components/example/snap-input-demo-2.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-input-demo-2"),
@@ -345,7 +316,7 @@ const example: Registry = {
   "snap-amount-input-demo": {
     name: "snap-amount-input-demo",
     type: "components:example",
-    registryDependencies: [],
+    registryDependencies: ["snap-amount-input"],
     files: ["registry/components/example/snap-amount-input-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-amount-input-demo"),
@@ -354,7 +325,7 @@ const example: Registry = {
   "snap-url-input-demo": {
     name: "snap-url-input-demo",
     type: "components:example",
-    registryDependencies: [],
+    registryDependencies: ["snap-url-input"],
     files: ["registry/components/example/snap-url-input-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-url-input-demo"),
@@ -363,7 +334,7 @@ const example: Registry = {
   "snap-phone-input-demo": {
     name: "snap-phone-input-demo",
     type: "components:example",
-    registryDependencies: [],
+    registryDependencies: ["snap-phone-input"],
     files: ["registry/components/example/snap-phone-input-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-phone-input-demo"),
@@ -372,7 +343,7 @@ const example: Registry = {
   "snap-textarea-demo": {
     name: "snap-textarea-demo",
     type: "components:example",
-    registryDependencies: [],
+    registryDependencies: ["snap-textarea"],
     files: ["registry/components/example/snap-textarea-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-textarea-demo"),
@@ -381,10 +352,19 @@ const example: Registry = {
   "snap-select-demo": {
     name: "snap-select-demo",
     type: "components:example",
-    registryDependencies: [],
+    registryDependencies: ["snap-select"],
     files: ["registry/components/example/snap-select-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-select-demo"),
+    ),
+  },
+  "snap-button-demo": {
+    name: "snap-button-demo",
+    type: "components:example",
+    registryDependencies: ["snap-button"],
+    files: ["registry/components/example/snap-button-demo.tsx"],
+    component: React.lazy(
+      () => import("@/registry/components/example/snap-button-demo"),
     ),
   },
   "snap-float-button-demo": {
@@ -422,34 +402,6 @@ const example: Registry = {
       () => import("@/registry/components/example/meteors-demo"),
     ),
   },
-  "grid-pattern-demo": {
-    name: "grid-pattern-demo",
-    type: "components:example",
-    registryDependencies: ["grid-pattern"],
-    files: ["registry/components/example/grid-pattern-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/grid-pattern-demo"),
-    ),
-  },
-  "grid-pattern-linear-gradient": {
-    name: "grid-pattern-linear-gradient",
-    type: "components:example",
-    registryDependencies: ["grid-pattern"],
-    files: ["registry/components/example/grid-pattern-linear-gradient.tsx"],
-    component: React.lazy(
-      () =>
-        import("@/registry/components/example/grid-pattern-linear-gradient"),
-    ),
-  },
-  "grid-pattern-dashed": {
-    name: "grid-pattern-dashed",
-    type: "components:example",
-    registryDependencies: ["grid-pattern"],
-    files: ["registry/components/example/grid-pattern-dashed.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/grid-pattern-dashed"),
-    ),
-  },
   "dot-pattern-demo": {
     name: "dot-pattern-demo",
     type: "components:example",
@@ -466,23 +418,6 @@ const example: Registry = {
     files: ["registry/components/example/dot-pattern-linear-gradient.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/dot-pattern-linear-gradient"),
-    ),
-  },
-  "flickering-grid-demo": {
-    name: "flickering-grid-demo",
-    type: "components:example",
-    files: ["registry/components/example/flickering-grid-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/flickering-grid-demo"),
-    ),
-  },
-  "flickering-grid-rounded-demo": {
-    name: "flickering-grid-rounded-demo",
-    type: "components:example",
-    files: ["registry/components/example/flickering-grid-rounded-demo.tsx"],
-    component: React.lazy(
-      () =>
-        import("@/registry/components/example/flickering-grid-rounded-demo"),
     ),
   },
   "hero-video-dialog-demo": {
@@ -622,23 +557,6 @@ const example: Registry = {
       () => import("@/registry/components/example/number-ticker-demo"),
     ),
   },
-  "ripple-demo": {
-    name: "ripple-demo",
-    type: "components:example",
-    registryDependencies: ["ripple"],
-    files: ["registry/components/example/ripple-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/ripple-demo"),
-    ),
-  },
-  "retro-grid-demo": {
-    name: "retro-grid-demo",
-    type: "components:example",
-    files: ["registry/components/example/retro-grid-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/retro-grid-demo"),
-    ),
-  },
   "animated-list-demo": {
     name: "animated-list-demo",
     type: "components:example",
@@ -666,15 +584,6 @@ const example: Registry = {
     files: ["registry/components/example/particles-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/particles-demo"),
-    ),
-  },
-  "animated-grid-pattern-demo": {
-    name: "animated-grid-pattern-demo",
-    type: "components:example",
-    registryDependencies: ["animated-grid-pattern"],
-    files: ["registry/components/example/animated-grid-pattern-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/animated-grid-pattern-demo"),
     ),
   },
   "border-beam-demo": {
@@ -1085,38 +994,6 @@ const example: Registry = {
     files: ["registry/components/example/blur-fade-text-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/blur-fade-text-demo"),
-    ),
-  },
-  "safari-demo": {
-    name: "safari-demo",
-    type: "components:example",
-    files: ["registry/components/example/safari-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/safari-demo"),
-    ),
-  },
-  "safari-demo-2": {
-    name: "safari-demo-2",
-    type: "components:example",
-    files: ["registry/components/example/safari-demo-2.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/safari-demo-2"),
-    ),
-  },
-  "iphone-15-pro-demo": {
-    name: "iphone-15-pro-demo",
-    type: "components:example",
-    files: ["registry/components/example/iphone-15-pro-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/iphone-15-pro-demo"),
-    ),
-  },
-  "iphone-15-pro-demo-2": {
-    name: "iphone-15-pro-demo-2",
-    type: "components:example",
-    files: ["registry/components/example/iphone-15-pro-demo-2.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/iphone-15-pro-demo-2"),
     ),
   },
   "rainbow-button-demo": {

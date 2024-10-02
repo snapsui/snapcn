@@ -13,13 +13,10 @@ export default function SnapInputDemo() {
         placeholder="Enter name..."
         leftIcon={<PersonIcon />}
         hint="This will be displayed on your profile."
-      />
-      <SnapInput
-        type="text"
         value={name}
-        placeholder="Enter name..."
         onChange={(e) => setName(e.target.value)}
         rightIcon={name && <Cross1Icon onClick={() => setName("")} />}
+        copyable
       />
     </div>
   );

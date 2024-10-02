@@ -127,6 +127,12 @@ export const docsConfig: DocsConfig = {
           items: [],
           label: "",
         },
+        {
+          title: "Button",
+          href: `/docs/snapui/snap-button`,
+          items: [],
+          label: "",
+        },
       ],
     },
     {

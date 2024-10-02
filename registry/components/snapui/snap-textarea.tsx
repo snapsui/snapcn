@@ -28,7 +28,7 @@ Textarea.displayName = "Textarea";
 
 const SnapTextarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, value, leftIcon, maxCharLength, ...props }, ref) => (
-    <div className="relative flex items-start w-full">
+    <div className="relative flex items-start w-[350px]">
       {leftIcon && (
         <span className="absolute left-3 top-2.5 flex items-center pointer-events-none text-primary">
           {leftIcon}

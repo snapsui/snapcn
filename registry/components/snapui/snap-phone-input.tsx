@@ -125,7 +125,7 @@ const PhoneCountryPickerDropdownButton = ({
       <SelectTrigger
         leftIcon={<EarthIcon className="w-4 h-4" />}
         selectedIcon={
-          selectedCountry && <selectedCountry.Flag className="w-5 h-4" />
+          selectedCountry && <selectedCountry.Flag className="w-5 h-5" />
         }
         className="w-[70px] rounded-l-lg rounded-r-none"
       ></SelectTrigger>

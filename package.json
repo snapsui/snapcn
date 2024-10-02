@@ -1,6 +1,6 @@
 {
   "name": "snapui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "prefix:cli": "pnpm --prefix ./packages/cli/ -- ",
@@ -10,13 +10,10 @@
     "release:cli": "pnpm prefix:cli release",
     "preinstall": "npx only-allow pnpm",
     "dev": "next dev",
-    "prebuild": "pnpm build:registry",
     "build": "next build",
     "build:registry": "tsx --tsconfig  ./tsconfig.scripts.json ./scripts/build-registry.ts",
     "typecheck": "tsc --noEmit",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },

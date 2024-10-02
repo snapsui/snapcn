@@ -1,13 +1,14 @@
 export const siteConfig = {
   name: "Snap UI",
-  url: "",
-  ogImage: "",
+  url: "https://snapcn.dev",
+  ogImage: "https://snapcn.dev/og",
   description:
     "Beautifully designed landing page components built with React & Tailwind CSS.",
   links: {
     twitter: "https://x.com/jeet1desai",
     discord: "https://discord.gg/VWH6J2Hupz",
     github: "https://github.com/snapsui/snapcn",
+    calcom: "https://cal.com/jeet1desai/snapui",
     instagram: "",
   },
   keywords: [

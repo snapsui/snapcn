@@ -57,7 +57,7 @@ export function absoluteUrl(path: string) {
 export function constructMetadata({
   title = "Snap UI - Modern React + Tailwind CSS components & Templates",
   description = "Snap UI is a curated collection of the best landing page components built using React + Tailwind CSS + Framer Motion",
-  image = absoluteUrl("/api/og"),
+  image = absoluteUrl("/og"),
   ...props
 }: {
   title?: string;
@@ -94,17 +94,17 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: "@dillionverma",
+      creator: "@jeet1desai",
     },
     icons: "/favicon.ico",
     metadataBase: new URL("https://magicui.design"),
     authors: [
       {
-        name: "dillionverma",
-        url: "https://twitter.com/dillionverma",
+        name: "jeet1desai",
+        url: "https://twitter.com/jeet1desai",
       },
     ],
-    creator: "dillionverma",
+    creator: "jeet1desai",
     ...props,
   };
 }

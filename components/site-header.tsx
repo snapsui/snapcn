@@ -14,9 +14,7 @@ export async function SiteHeader() {
         <MainNav />
         <MobileNav />
         <div className="flex flex-1 items-center justify-between gap-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
-            <CommandMenu />
-          </div>
+          <CommandMenu />
         </div>
       </div>
     </header>
