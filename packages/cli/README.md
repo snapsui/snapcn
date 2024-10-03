@@ -32,7 +32,7 @@ To make Snap UI work, simply add the following two lines in your `components.jso
     "components": "@/components",
     "utils": "@/lib/utils",
 +   "ui": "@/components/ui",
-+   "magicui": "@/components/magicui"
++   "snapui": "@/components/snapui"
   }
 }
 ```

@@ -1,6 +1,3 @@
-import Marquee from "@/registry/components/magicui/marquee";
-import TweetCard from "@/registry/components/magicui/tweet-card";
-
 const tweets = [
   "https://x.com/chronark_/status/1754781648262967323",
   "https://x.com/pkp_io/status/1684561895481802753",
@@ -41,20 +38,6 @@ export default async function Testimonials() {
         <strong>real people</strong> are saying about Snap UI on Twitter.
       </h3>
       <div className="relative flex flex-col">
-        <Marquee className="max-w-screen [--duration:120s]" pauseOnHover>
-          {firstRow.map((id, idx) => (
-            <TweetCard id={id} className="max-h-32 w-72 min-w-72" key={idx} />
-          ))}
-        </Marquee>
-        <Marquee
-          className="max-w-screen [--duration:120s]"
-          reverse
-          pauseOnHover
-        >
-          {secondRow.map((id, idx) => (
-            <TweetCard id={id} className="max-h-32 w-72 min-w-72" key={idx} />
-          ))}
-        </Marquee>
         <div className="pointer-events-none absolute inset-y-0 left-0 h-full w-1/3 bg-gradient-to-r from-background"></div>
         <div className="pointer-events-none absolute inset-y-0 right-0 h-full  w-1/3 bg-gradient-to-l from-background"></div>
       </div>

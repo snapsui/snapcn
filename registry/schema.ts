@@ -10,7 +10,7 @@ export const registrySchema = z.record(
     type: z.enum([
       "components:ui",
       "components:snapui",
-      "components:magicui",
+      "components:widgets",
       "components:component",
       "components:example",
       "components:blocks",

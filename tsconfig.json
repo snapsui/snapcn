@@ -23,7 +23,7 @@
     "paths": {
       "@/*": ["./*"],
       "@/components/snapui/*": ["./registry/components/snapui/*"],
-      "@/components/magicui/*": ["./registry/components/magicui/*"],
+      "@/components/widgets/*": ["./registry/components/widgets/*"],
       "@/components/example/*": ["./registry/components/example/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     }

@@ -2,7 +2,7 @@ import { createWriteStream } from "node:fs";
 import { Readable } from "node:stream";
 import { z } from "zod";
 
-const baseUrl = process.env.PRO_REGISTRY_URL ?? "https://pro.magicui.design";
+const baseUrl = process.env.PRO_REGISTRY_URL ?? "https://snapcn.dev";
 
 const projectTemplatesSchema = z.object({
   repo: z.string(),

@@ -15,9 +15,9 @@ export default function CTASection() {
             <h1 className="text-3xl font-bold lg:text-4xl">
               Looking for templates instead?
             </h1>
-            <p className="mt-2">Check out Magic UI Pro</p>
+            <p className="mt-2">Check out Snap UI Pro</p>
             <a
-              href="https://pro.magicui.design/"
+              href=""
               className={cn(
                 buttonVariants({
                   size: "lg",

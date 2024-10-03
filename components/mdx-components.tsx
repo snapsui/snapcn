@@ -15,7 +15,6 @@ import { Callout } from "@/components/callout";
 import RepoDownload from "@/components/repo-download";
 import TechStack from "@/components/tech-stack";
 import TemplatePreview from "@/components/template-preview";
-import TweetCard from "@/registry/components/magicui/tweet-card";
 
 import { ComponentInstallation } from "./component-installation";
 import { ComponentPreview } from "./component-preview";
@@ -49,7 +48,6 @@ const components = {
   RepoDownload,
   TemplatePreview,
   Image,
-  Tweet: ({ id }: { id: string }) => <TweetCard id={id} className="mx-auto" />,
   Callout,
   ComponentPreview,
   ComponentSource: (props: any) => <ComponentSource {...props} />,

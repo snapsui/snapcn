@@ -2,8 +2,6 @@ import Link from "next/link";
 import { allShowcases } from "@/.contentlayer/generated";
 import { ChevronRightIcon } from "@radix-ui/react-icons";
 
-import Marquee from "@/registry/components/magicui/marquee";
-
 export interface ShowcaseCardProps {
   title: string;
   image: string;
@@ -50,11 +48,6 @@ export default function Showcase() {
         Companies choose Snap UI to build their landing pages.
       </h3>
       <div className="relative flex flex-col">
-        <Marquee className="max-w-screen [--duration:40s]">
-          {allShowcases.map((showcase, idx) => (
-            <ShowcaseCard key={idx} {...showcase} href={showcase.slug} />
-          ))}
-        </Marquee>
         <div className="pointer-events-none absolute inset-y-0 left-0 h-full w-1/12 bg-gradient-to-r from-background"></div>
         <div className="pointer-events-none absolute inset-y-0 right-0 h-full  w-1/12 bg-gradient-to-l from-background"></div>
       </div>

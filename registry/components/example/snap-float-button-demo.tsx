@@ -9,7 +9,7 @@ import {
 import {
   SnapFloatButton,
   SnapFloatButtonItem,
-} from "@/components/snapui/snap-float-button";
+} from "@/registry/components/widgets/snap-float-button";
 
 export default function SnapFloatButtonDemo() {
   return (

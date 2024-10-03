@@ -1,6 +1,6 @@
 {
   "name": "snapcn",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Add snap ui components to your apps.",
   "license": "MIT",
   "files": [

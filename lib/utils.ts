@@ -97,7 +97,7 @@ export function constructMetadata({
       creator: "@jeet1desai",
     },
     icons: "/favicon.ico",
-    metadataBase: new URL("https://magicui.design"),
+    metadataBase: new URL("https://snapcn.dev"),
     authors: [
       {
         name: "jeet1desai",
