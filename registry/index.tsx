@@ -55,32 +55,6 @@ const ui: Registry = {
     type: "components:snapui",
     files: ["registry/components/snapui/snap-float-button.tsx"],
   },
-  meteors: {
-    name: "meteors",
-    type: "components:magicui",
-    files: ["registry/components/magicui/meteors.tsx"],
-  },
-  "dot-pattern": {
-    name: "dot-pattern",
-    type: "components:magicui",
-    files: ["registry/components/magicui/dot-pattern.tsx"],
-  },
-  "hero-video-dialog": {
-    name: "hero-video-dialog",
-    type: "components:magicui",
-    files: ["registry/components/magicui/hero-video-dialog.tsx"],
-  },
-  marquee: {
-    name: "marquee",
-    type: "components:magicui",
-    files: ["registry/components/magicui/marquee.tsx"],
-  },
-  globe: {
-    name: "globe",
-    type: "components:magicui",
-    dependencies: ["cobe", "react-spring"],
-    files: ["registry/components/magicui/globe.tsx"],
-  },
   "shimmer-button": {
     name: "shimmer-button",
     type: "components:magicui",
@@ -190,22 +164,6 @@ const ui: Registry = {
     type: "components:magicui",
     files: ["registry/components/magicui/scroll-based-velocity.tsx"],
   },
-  "shiny-button": {
-    name: "shiny-button",
-    type: "components:magicui",
-    files: ["registry/components/magicui/shiny-button.tsx"],
-  },
-  confetti: {
-    name: "confetti",
-    type: "components:magicui",
-    dependencies: ["canvas-confetti", "@types/canvas-confetti"],
-    files: ["registry/components/magicui/confetti.tsx"],
-  },
-  "rainbow-button": {
-    name: "rainbow-button",
-    type: "components:magicui",
-    files: ["registry/components/magicui/rainbow-button.tsx"],
-  },
 };
 
 const example: Registry = {
@@ -288,99 +246,6 @@ const example: Registry = {
     files: ["registry/components/example/snap-float-button-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-float-button-demo"),
-    ),
-  },
-  "meteors-demo": {
-    name: "meteors-demo",
-    type: "components:example",
-    registryDependencies: ["meteors"],
-    files: ["registry/components/example/meteors-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/meteors-demo"),
-    ),
-  },
-  "dot-pattern-demo": {
-    name: "dot-pattern-demo",
-    type: "components:example",
-    registryDependencies: ["dot-pattern"],
-    files: ["registry/components/example/dot-pattern-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/dot-pattern-demo"),
-    ),
-  },
-  "dot-pattern-linear-gradient": {
-    name: "dot-pattern-linear-gradient",
-    type: "components:example",
-    registryDependencies: ["dot-pattern"],
-    files: ["registry/components/example/dot-pattern-linear-gradient.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/dot-pattern-linear-gradient"),
-    ),
-  },
-  "hero-video-dialog-demo": {
-    name: "hero-video-dialog-demo",
-    type: "components:example",
-    files: ["registry/components/example/hero-video-dialog-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/hero-video-dialog-demo"),
-    ),
-  },
-  "hero-video-dialog-demo-top-in-bottom-out": {
-    name: "hero-video-dialog-demo-top-in-bottom-out",
-    type: "components:example",
-    files: [
-      "registry/components/example/hero-video-dialog-demo-top-in-bottom-out.tsx",
-    ],
-    component: React.lazy(
-      () =>
-        import(
-          "@/registry/components/example/hero-video-dialog-demo-top-in-bottom-out"
-        ),
-    ),
-  },
-  "marquee-demo": {
-    name: "marquee-demo",
-    type: "components:example",
-    registryDependencies: ["marquee"],
-    files: ["registry/components/example/marquee-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/marquee-demo"),
-    ),
-  },
-  "marquee-demo-vertical": {
-    name: "marquee-demo-vertical",
-    type: "components:example",
-    registryDependencies: ["marquee"],
-    files: ["registry/components/example/marquee-demo-vertical.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/marquee-demo-vertical"),
-    ),
-  },
-  "marquee-logos": {
-    name: "marquee-logos",
-    type: "components:example",
-    registryDependencies: ["marquee"],
-    files: ["registry/components/example/marquee-logos.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/marquee-logos"),
-    ),
-  },
-  "marquee-3d": {
-    name: "marquee-3d",
-    type: "components:example",
-    registryDependencies: ["marquee"],
-    files: ["registry/components/example/marquee-3d.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/marquee-3d"),
-    ),
-  },
-  "globe-demo": {
-    name: "globe-demo",
-    type: "components:example",
-    registryDependencies: ["globe"],
-    files: ["registry/components/example/globe-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/globe-demo"),
     ),
   },
   "tweet-card-demo": {
@@ -659,102 +524,6 @@ const example: Registry = {
     files: ["registry/components/example/gradual-spacing-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/gradual-spacing-demo"),
-    ),
-  },
-  "shiny-button-demo": {
-    name: "shiny-button-demo",
-    type: "components:example",
-    files: ["registry/components/example/shiny-button-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/shiny-button-demo"),
-    ),
-  },
-  "confetti-demo": {
-    name: "confetti-demo",
-    type: "components:example",
-    files: ["registry/components/example/confetti-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/confetti-demo"),
-    ),
-  },
-  "confetti-basic-cannon": {
-    name: "confetti-basic-cannon",
-    type: "components:example",
-    files: ["registry/components/example/confetti-basic-cannon.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/confetti-basic-cannon"),
-    ),
-  },
-  "confetti-random-direction": {
-    name: "confetti-random-direction",
-    type: "components:example",
-    files: ["registry/components/example/confetti-random-direction.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/confetti-random-direction"),
-    ),
-  },
-  "confetti-fireworks": {
-    name: "confetti-fireworks",
-    type: "components:example",
-    files: ["registry/components/example/confetti-fireworks.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/confetti-fireworks"),
-    ),
-  },
-  "confetti-stars": {
-    name: "confetti-stars",
-    type: "components:example",
-    files: ["registry/components/example/confetti-stars.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/confetti-stars"),
-    ),
-  },
-  "confetti-side-cannons": {
-    name: "confetti-side-cannons",
-    type: "components:example",
-    files: ["registry/components/example/confetti-side-cannons.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/confetti-side-cannons"),
-    ),
-  },
-  "confetti-custom-shapes": {
-    name: "confetti-custom-shapes",
-    type: "components:example",
-    files: ["registry/components/example/confetti-custom-shapes.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/confetti-custom-shapes"),
-    ),
-  },
-  "confetti-emoji": {
-    name: "confetti-emoji",
-    type: "components:example",
-    files: ["registry/components/example/confetti-emoji.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/confetti-emoji"),
-    ),
-  },
-  "blur-fade-demo": {
-    name: "blur-fade-demo",
-    type: "components:example",
-    files: ["registry/components/example/blur-fade-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/blur-fade-demo"),
-    ),
-  },
-  "blur-fade-text-demo": {
-    name: "blur-fade-text-demo",
-    type: "components:example",
-    files: ["registry/components/example/blur-fade-text-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/blur-fade-text-demo"),
-    ),
-  },
-  "rainbow-button-demo": {
-    name: "rainbow-button-demo",
-    type: "components:example",
-    files: ["registry/components/example/rainbow-button-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/rainbow-button-demo"),
     ),
   },
 };

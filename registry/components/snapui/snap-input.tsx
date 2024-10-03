@@ -88,14 +88,14 @@ const SnapInput = React.forwardRef<HTMLInputElement, InputProps>(
               <span
                 className={`cursor-pointer transition-all duration-300 ease-in-out ${isCopied ? "opacity-100 scale-100" : "opacity-0 scale-50"}`}
               >
-                <CheckIcon className="w-full h-full" />
+                <CheckIcon className="w-4 h-4" />
               </span>
             )}
             {copyable && !isCopied && (
               <span
                 className={`cursor-pointer transition-all duration-300 ease-in-out ${isCopied ? "opacity-0 scale-50" : "opacity-100 scale-100"}`}
               >
-                <CopyIcon onClick={handleCopy} className="w-full h-full" />
+                <CopyIcon onClick={handleCopy} className="w-4 h-4" />
               </span>
             )}
           </span>
