@@ -30,8 +30,10 @@ const PhoneInputComponent = React.forwardRef<
   return (
     <Input
       ref={ref}
-      className="rounded-r-lg rounded-l-none border-l-0"
-      placeholder="Enter phone number..."
+      className={cn(
+        "flex-1 block w-full px-3 py-2 focus:outline-none border-0 border-l border-input rounded-none rounded-r-lg focus-visible:ring-0 shadow-none focus-visible:ring-offset-0",
+        className,
+      )}
       {...props}
     />
   );
@@ -123,11 +125,11 @@ const PhoneCountryPickerDropdownButton = ({
   return (
     <Select value={value} onValueChange={(value: string) => handleClick(value)}>
       <SelectTrigger
-        leftIcon={<EarthIcon className="w-4 h-4" />}
+        leftIcon={<EarthIcon className="size-4" />}
         selectedIcon={
           selectedCountry && <selectedCountry.Flag className="w-5 h-5" />
         }
-        className="w-[70px] rounded-l-lg rounded-r-none"
+        className="w-[70px] rounded-l-lg rounded-r-none focus:outline-none border-0 border-input focus-visible:ring-0 shadow-none focus-visible:ring-offset-0"
       ></SelectTrigger>
       <SelectContent>
         <div className="-top-1 px-2 pb-1.5 sticky bg-popover z-10 pt-2">
@@ -137,7 +139,7 @@ const PhoneCountryPickerDropdownButton = ({
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search..."
             className="rounded-md h-8"
-            leftIcon={<SearchIcon className="w-4 h-4" />}
+            leftIcon={<SearchIcon className="size-4" />}
           />
         </div>
         {filteredItems.map(
@@ -164,17 +166,25 @@ export interface PhoneInputProps
 }
 
 const SnapPhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
-  ({ className, placeholder, value, onChange, autoFocus, ...props }) => {
+  ({ className, placeholder, value, onChange, autoFocus, ...props }, ref) => {
     const inputRef = React.useRef<HTMLInputElement>(null);
 
     const handleCountrySelect = React.useCallback(() => {
-      if (inputRef.current) {
-        inputRef.current.focus();
+      if (ref && "current" in ref && ref.current) {
+        ref.current.focus();
       }
-    }, [value]);
+    }, [ref]);
 
     return (
-      <div className="flex rounded-lg bg-background">
+      <div
+        className={cn(
+          "mt-1 flex items-center rounded-lg border border-input ring-offset-background focus-within:ring-offset-background focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-background transition duration-300 focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:bg-transparent hover:bg-muted hover:border-transparent",
+          props.disabled
+            ? "opacity-50 cursor-not-allowed text-muted-foreground"
+            : "",
+          className,
+        )}
+      >
         <PhoneInput
           placeholder={placeholder}
           value={value}

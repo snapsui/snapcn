@@ -55,19 +55,46 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
     <div className="w-full pt-2 pb-20">
       {items.map((item, index) => {
         return (
-          <div key={index} className={"pb-4"}>
-            <div
-              className="flex items-center cursor-pointer justify-between"
-              onClick={() => toggleDropdown(index)}
-            >
-              <h4 className="mb-1 rounded-md py-1 text-base font-semibold">
-                {item.title}
-              </h4>
-              {isOpen.includes(index) ? (
-                <ChevronDownIcon className="ml-2" />
-              ) : (
-                <ChevronUpIcon className="ml-2" />
-              )}
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            className={"pb-4"}
+          >
+            <div className="relative overflow-hidden rounded-md">
+              <motion.div
+                className="absolute inset-0 bg-neutral-100 dark:bg-neutral-800"
+                initial={false}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              />
+              <motion.div
+                className="relative flex items-center cursor-pointer justify-between px-3 py-1.5"
+                onClick={() => toggleDropdown(index)}
+              >
+                <h4 className="text-base font-semibold">{item.title}</h4>
+                <motion.div
+                  initial={false}
+                  animate={{ opacity: 1 }}
+                  className="ml-2 relative size-4"
+                >
+                  <motion.div
+                    animate={{ opacity: isOpen.includes(index) ? 0 : 1 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute inset-0"
+                  >
+                    <ChevronDownIcon className="size-4" />
+                  </motion.div>
+                  <motion.div
+                    animate={{ opacity: isOpen.includes(index) ? 1 : 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute inset-0"
+                  >
+                    <ChevronUpIcon className="size-4" />
+                  </motion.div>
+                </motion.div>
+              </motion.div>
             </div>
             <AnimatePresence initial={false}>
               {isOpen.includes(index) && item?.items && (
@@ -77,15 +104,11 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                 >
-                  <DocsSidebarNavItems
-                    items={item.items}
-                    pathname={pathname}
-                    groupId={`group-${index}`}
-                  />
+                  <DocsSidebarNavItems items={item.items} pathname={pathname} />
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </motion.div>
         );
       })}
     </div>
@@ -95,60 +118,37 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
 interface DocsSidebarNavItemsProps {
   items: SidebarNavItem[];
   pathname: string | null;
-  groupId: string;
 }
 
 export function DocsSidebarNavItems({
   items,
   pathname,
-  groupId,
 }: DocsSidebarNavItemsProps) {
   return items?.length ? (
-    <div className="relative grid grid-flow-row auto-rows-max gap-0.5 text-sm">
+    <div className="relative grid grid-flow-row auto-rows-max gap-1 text-sm pl-4">
+      <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-border" />
       {items.map((item, index) =>
         item.href && !item.disabled ? (
           <Link
             key={index}
             href={item.href}
             className={cn(
-              "text-base group relative flex w-full items-center rounded-md border border-transparent px-2 py-1",
+              "group relative flex w-full items-center py-1.5",
               item.disabled && "cursor-not-allowed opacity-60",
               pathname === item.href
                 ? "font-medium text-foreground"
-                : "text-muted-foreground",
+                : "text-muted-foreground hover:text-foreground",
             )}
             target={item.external ? "_blank" : ""}
             rel={item.external ? "noreferrer" : ""}
           >
-            {pathname === item.href && (
-              <motion.div
-                layoutId={groupId}
-                className="absolute inset-0 rounded-md border-neutral-300 bg-neutral-100 dark:border-neutral-600 dark:bg-neutral-800"
-                initial={false}
-                transition={{
-                  type: "spring",
-                  stiffness: 350,
-                  damping: 30,
-                  mass: 1,
-                  velocity: 200,
-                }}
-              />
-            )}
             <div
-              className={cn(
-                "relative z-10 mr-2 h-5 w-0.5",
-                pathname === item.href ? "bg-foreground" : "",
-              )}
+              className={cn("absolute -left-6 top-1/2 h-[2px] w-5 bg-border")}
             />
-            <span className="relative z-10 shrink-0">{item.title}</span>
+            <span className="relative z-10 text-base">{item.title}</span>
             {item.label && (
-              <span className="z-10 ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000]">
-                {item.label}
-              </span>
-            )}
-            {item.paid && (
-              <span className="relative z-10 ml-2 rounded-md bg-[#4ade80] px-1.5 py-0.5 text-xs leading-none text-[#000000]">
-                Paid
+              <span className="z-10 ml-2 text-sm text-muted-foreground">
+                · {item.label}
               </span>
             )}
             {item.external && (
@@ -159,19 +159,15 @@ export function DocsSidebarNavItems({
           <span
             key={index}
             className={cn(
-              "z-10 flex w-full cursor-not-allowed items-center rounded-md p-2 text-muted-foreground hover:underline group-hover:underline",
+              "group relative flex w-full items-center py-1.5 text-muted-foreground",
               item.disabled && "cursor-not-allowed opacity-60",
             )}
           >
-            {item.title}
+            <div className="absolute -left-4 top-1/2 h-[2px] w-4 bg-border" />
+            <span className="relative z-10 text-base">{item.title}</span>
             {item.label && (
-              <span className="z-10 ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000]">
-                {item.label}
-              </span>
-            )}
-            {item.paid && (
-              <span className="ml-2 rounded-md bg-[#4ade80] px-1.5 py-0.5 text-xs leading-none text-[#000000]">
-                Paid
+              <span className="z-10 ml-2 text-sm text-muted-foreground">
+                · {item.label}
               </span>
             )}
           </span>

@@ -1,6 +1,6 @@
 ---
 title: Button
-date: 2024-10-02
+date: 2024-10-05
 description: A button component that can be used to trigger actions in your app.
 author: jeet1desai
 published: true
@@ -45,3 +45,17 @@ npm install @radix-ui/react-slot class-variance-authority
 </TabsContent>
 
 </Tabs>
+
+### Props
+
+| Prop      | Type                                                  | Required | Default                                           | Description                                     |
+| --------- | ----------------------------------------------------- | -------- | ------------------------------------------------- | ----------------------------------------------- |
+| variant   | "default" \| "outline" \| "soft" \| "ghost" \| "link" | No       | "default"                                         | The visual style variant of the button.         |
+| size      | "default" \| "sm" \| "lg" \| "icon"                   | No       | "default"                                         | The size of the button.                         |
+| color     | "default" \| "error"                                  | No       | "default"                                         | The color scheme of the button.                 |
+| shape     | "default" \| "square" \| "pill"                       | No       | "default"                                         | The shape of the button.                        |
+| asChild   | boolean                                               | No       | false                                             | If true, allows rendering as a child component. |
+| className | string                                                | No       | ""                                                | Additional CSS classes to apply to the button.  |
+| children  | React.ReactNode                                       | Yes      | -                                                 | The content to be rendered inside the button.   |
+| disabled  | boolean                                               | No       | false                                             | If true, the button will be disabled.           |
+| onClick   | React.MouseEvent                                      | -        | Function to be called when the button is clicked. |

@@ -36,7 +36,7 @@ export const SelectTrigger = React.forwardRef<
         {children}
       </div>
       <SelectPrimitive.Icon asChild>
-        <ChevronsUpDown className="h-4 w-4 opacity-50" />
+        <ChevronsUpDown className="size-3 opacity-50" />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   );
@@ -138,7 +138,7 @@ const SnapSelect = ({
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search..."
               className="rounded-md h-8"
-              leftIcon={<SearchIcon className="w-4 h-4" />}
+              leftIcon={<SearchIcon className="size-4" />}
             />
           </div>
         )}

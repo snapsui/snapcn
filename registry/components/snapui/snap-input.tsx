@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { CheckIcon, CopyIcon } from "lucide-react";
+import { CheckIcon, ClipboardIcon, CopyIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -50,13 +50,13 @@ const SnapInput = React.forwardRef<HTMLInputElement, InputProps>(
     },
     ref,
   ) => {
-    const [isCopied, setIsCopied] = React.useState(false);
+    const [hasCopied, setCopied] = React.useState(false);
 
     const handleCopy = () => {
       if (value) {
         navigator.clipboard.writeText(value.toString()).then(() => {
-          setIsCopied(true);
-          setTimeout(() => setIsCopied(false), 1000);
+          setCopied(true);
+          setTimeout(() => setCopied(false), 1000);
         });
       }
     };
@@ -84,19 +84,17 @@ const SnapInput = React.forwardRef<HTMLInputElement, InputProps>(
               <span className="cursor-pointer text-primary">{rightIcon}</span>
             )}
 
-            {copyable && isCopied && (
-              <span
-                className={`cursor-pointer transition-all duration-300 ease-in-out ${isCopied ? "opacity-100 scale-100" : "opacity-0 scale-50"}`}
-              >
-                <CheckIcon className="w-4 h-4" />
-              </span>
-            )}
-            {copyable && !isCopied && (
-              <span
-                className={`cursor-pointer transition-all duration-300 ease-in-out ${isCopied ? "opacity-0 scale-50" : "opacity-100 scale-100"}`}
-              >
-                <CopyIcon onClick={handleCopy} className="w-4 h-4" />
-              </span>
+            {copyable && (
+              <>
+                {hasCopied ? (
+                  <CheckIcon className="size-4 cursor-pointer" />
+                ) : (
+                  <ClipboardIcon
+                    onClick={handleCopy}
+                    className="size-4 cursor-pointer"
+                  />
+                )}
+              </>
             )}
           </span>
         </div>

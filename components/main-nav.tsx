@@ -20,7 +20,7 @@ export function MainNav() {
           {siteConfig.name}
         </span>
       </Link>
-      <nav className="hidden items-center space-x-6 text-sm font-medium lg:flex">
+      <nav className="hidden items-center space-x-6 text-md font-medium lg:flex">
         {docsConfig.mainNav.map((item) => (
           <Link
             key={item.href}

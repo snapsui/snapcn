@@ -41,51 +41,6 @@ export const docsConfig: DocsConfig = {
             },
           ],
         },
-        {
-          title: "CLI",
-          href: "/docs/cli",
-          items: [],
-        },
-      ],
-    },
-    {
-      title: "Installation",
-      items: [
-        {
-          title: "Next.js",
-          href: "/docs/installation/nextjs",
-          items: [],
-        },
-        {
-          title: "Vite",
-          href: "/docs/installation/vite",
-          items: [],
-        },
-        {
-          title: "Astro",
-          href: "/docs/installation/astro",
-          items: [],
-        },
-        {
-          title: "Remix",
-          href: "/docs/installation/remix",
-          items: [],
-        },
-        {
-          title: "Laravel",
-          href: "/docs/installation/laravel",
-          items: [],
-        },
-        {
-          title: "Gatsby",
-          href: "/docs/installation/gatsby",
-          items: [],
-        },
-        {
-          title: "React.js / Manual",
-          href: "/docs/installation/react",
-          items: [],
-        },
       ],
     },
     {
@@ -112,6 +67,12 @@ export const docsConfig: DocsConfig = {
         {
           title: "Amount Input",
           href: `/docs/snapui/snap-amount-input`,
+          items: [],
+          label: "",
+        },
+        {
+          title: "Boolean Input",
+          href: `/docs/snapui/snap-boolean-input`,
           items: [],
           label: "",
         },

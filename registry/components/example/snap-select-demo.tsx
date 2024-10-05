@@ -13,7 +13,7 @@ export default function SnapSelectDemo() {
         <img
           src="http://purecatamphetamine.github.io/country-flag-icons/3x2/IN.svg"
           alt="Option 1"
-          className="h-4 w-4 rounded-full object-cover"
+          className="size-4 rounded-full object-cover"
         />
       ),
     },
@@ -30,7 +30,7 @@ export default function SnapSelectDemo() {
       value={country}
       onValueChange={(value: string) => setCountry(value)}
       isSearch
-      leftIcon={<EarthIcon className="w-4 h-4" />}
+      leftIcon={<EarthIcon className="size-4" />}
     />
   );
 }

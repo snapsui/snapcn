@@ -8,7 +8,7 @@ export default function SnapTextareaDemo() {
 
   return (
     <SnapTextarea
-      leftIcon={<InfoCircledIcon className="w-4 h-4" />}
+      leftIcon={<InfoCircledIcon className="size-4" />}
       placeholder="Enter your company details..."
       value={value}
       onChange={(e) => setValue(e.target.value)}

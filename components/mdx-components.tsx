@@ -13,7 +13,6 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Callout } from "@/components/callout";
 import RepoDownload from "@/components/repo-download";
-import TechStack from "@/components/tech-stack";
 import TemplatePreview from "@/components/template-preview";
 
 import { ComponentInstallation } from "./component-installation";
@@ -44,7 +43,6 @@ const components = {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  TechStack,
   RepoDownload,
   TemplatePreview,
   Image,

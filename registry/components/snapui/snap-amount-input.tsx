@@ -92,11 +92,11 @@ const CurrencyPickerDropdownButton = ({
       disabled={disabled}
     >
       <SelectTrigger
-        leftIcon={<CurrencyIcon className="w-4 h-4" />}
+        leftIcon={<CurrencyIcon className="size-4" />}
         selectedIcon={
           selectedCurrency && (
             <img
-              className="w-4 h-4 rounded-full object-cover"
+              className="size-4 rounded-full object-cover"
               src={selectedCurrency.icon}
               alt={selectedCurrency.name}
             />
@@ -114,7 +114,7 @@ const CurrencyPickerDropdownButton = ({
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search..."
             className="rounded-md h-8"
-            leftIcon={<SearchIcon className="w-4 h-4" />}
+            leftIcon={<SearchIcon className="size-4" />}
           />
         </div>
         {filteredItems.map(({ code, name, icon }) => (
@@ -123,7 +123,7 @@ const CurrencyPickerDropdownButton = ({
             key={code}
             icon={
               <img
-                className="w-4 h-4 rounded-full object-cover"
+                className="size-4 rounded-full object-cover"
                 src={icon}
                 alt={icon}
               />
