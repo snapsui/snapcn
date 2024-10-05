@@ -77,6 +77,12 @@ export const docsConfig: DocsConfig = {
           label: "",
         },
         {
+          title: "Rating Input",
+          href: `/docs/snapui/snap-rating-input`,
+          items: [],
+          label: "",
+        },
+        {
           title: "TextArea",
           href: `/docs/snapui/snap-textarea`,
           items: [],

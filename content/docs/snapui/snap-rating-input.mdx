@@ -1,0 +1,51 @@
+---
+title: Rating Input
+date: 2024-09-21
+description: A component that allows users to input a rating.
+author: jeet1desai
+published: true
+---
+
+<ComponentPreview name="snap-rating-input-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx snapcn add snap-rating-input
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="snap-rating-input" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Props
+
+| Prop      | Type                    | Required | Default | Description                                           |
+| --------- | ----------------------- | -------- | ------- | ----------------------------------------------------- |
+| className | string                  | No       |         | Additional CSS classes to apply to the input wrapper. |
+| value     | number                  | Yes      |         | The value of the rating input.                        |
+| onChange  | (value: number) => void | No       |         | Callback function to call when the value changes.     |
+| readonly  | boolean                 | No       | false   | Whether the input is readonly.                        |
+| ref       | React.Ref               | No       |         | Ref to the underlying input element.                  |

@@ -39,6 +39,12 @@ const ui: Registry = {
     registryDependencies: ["shadcn:snap-button"],
     files: ["registry/components/snapui/snap-boolean-input.tsx"],
   },
+  "snap-rating-input": {
+    name: "snap-rating-input",
+    type: "components:snapui",
+    dependencies: [],
+    files: ["registry/components/snapui/snap-rating-input.tsx"],
+  },
   "snap-textarea": {
     name: "snap-textarea",
     type: "components:snapui",
@@ -117,6 +123,15 @@ const example: Registry = {
     files: ["registry/components/example/snap-boolean-input-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-boolean-input-demo"),
+    ),
+  },
+  "snap-rating-input-demo": {
+    name: "snap-rating-input-demo",
+    type: "components:example",
+    registryDependencies: [],
+    files: ["registry/components/example/snap-rating-input-demo.tsx"],
+    component: React.lazy(
+      () => import("@/registry/components/example/snap-rating-input-demo"),
     ),
   },
   "snap-textarea-demo": {
