@@ -46,7 +46,7 @@ const SnapRatingInput = React.forwardRef<HTMLDivElement, SnapRatingInputProps>(
             key={ratingValue}
             className={cn(
               "size-6 transition-all duration-200 ease-in-out",
-              "hover:scale-110 active:scale-95",
+              "hover:scale-125 active:scale-95",
               index <= selectedIndex
                 ? "text-yellow-400 fill-yellow-400"
                 : "text-gray-300 hover:text-yellow-200",

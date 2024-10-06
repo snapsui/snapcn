@@ -1,0 +1,63 @@
+---
+title: Address Input
+date: 2024-09-06
+description: Address Input is a component that allows users to enter and validate an address.
+author: jeet1desai
+published: true
+---
+
+<ComponentPreview name="snap-address-input-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx snapcn add snap-address-input
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>`Snap Input` Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="snap-input" />
+
+<Step>`Snap Select` Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="snap-select" />
+
+<Step>
+  `Snap Use Country` Copy and paste the following code into your project.
+</Step>
+
+<ComponentSource name="snap-use-country" />
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="snap-address-input" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+### Props
+
+| Prop      | Type                    | Required | Default | Description                                      |
+| --------- | ----------------------- | -------- | ------- | ------------------------------------------------ |
+| value     | string                  | Yes      | -       | The current value of the input                   |
+| onChange  | (value: string) => void | No       | -       | Callback function called when the value changes  |
+| className | string                  | No       | -       | Additional CSS classes to apply to the component |

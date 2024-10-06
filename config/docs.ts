@@ -83,6 +83,12 @@ export const docsConfig: DocsConfig = {
           label: "",
         },
         {
+          title: "Address Input",
+          href: `/docs/snapui/snap-address-input`,
+          items: [],
+          label: "",
+        },
+        {
           title: "TextArea",
           href: `/docs/snapui/snap-textarea`,
           items: [],

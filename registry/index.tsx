@@ -11,19 +11,19 @@ const ui: Registry = {
   "snap-amount-input": {
     name: "snap-amount-input",
     type: "components:snapui",
-    registryDependencies: ["shadcn:snap-input", "shadcn:snap-select"],
+    registryDependencies: ["snapcn:snap-input", "snapcn:snap-select"],
     files: ["registry/components/snapui/snap-amount-input.tsx"],
   },
   "snap-url-input": {
     name: "snap-url-input",
     type: "components:snapui",
-    registryDependencies: ["shadcn:snap-input"],
+    registryDependencies: ["snapcn:snap-input"],
     files: ["registry/components/snapui/snap-url-input.tsx"],
   },
   "snap-phone-input": {
     name: "snap-phone-input",
     type: "components:snapui",
-    registryDependencies: ["shadcn:snap-input", "shadcn:snap-select"],
+    registryDependencies: ["snapcn:snap-input", "snapcn:snap-select"],
     dependencies: [
       "@radix-ui/react-select",
       "country-flag-icons",
@@ -36,7 +36,7 @@ const ui: Registry = {
     name: "snap-boolean-input",
     type: "components:snapui",
     dependencies: ["@radix-ui/react-slot", "class-variance-authority"],
-    registryDependencies: ["shadcn:snap-button"],
+    registryDependencies: ["snapcn:snap-button"],
     files: ["registry/components/snapui/snap-boolean-input.tsx"],
   },
   "snap-rating-input": {
@@ -44,6 +44,21 @@ const ui: Registry = {
     type: "components:snapui",
     dependencies: [],
     files: ["registry/components/snapui/snap-rating-input.tsx"],
+  },
+  "snap-address-input": {
+    name: "snap-address-input",
+    type: "components:snapui",
+    dependencies: [
+      "@radix-ui/react-select",
+      "country-flag-icons",
+      "libphonenumber-js",
+    ],
+    registryDependencies: [
+      "snapcn:snap-input",
+      "snapcn:snap-select",
+      "snapcn:use-country",
+    ],
+    files: ["registry/components/snapui/snap-address-input.tsx"],
   },
   "snap-textarea": {
     name: "snap-textarea",
@@ -54,7 +69,7 @@ const ui: Registry = {
     name: "snap-select",
     type: "components:snapui",
     dependencies: ["@radix-ui/react-select"],
-    registryDependencies: ["shadcn:snap-input"],
+    registryDependencies: ["snapcn:snap-input"],
     files: ["registry/components/snapui/snap-select.tsx"],
   },
   "snap-button": {
@@ -134,6 +149,15 @@ const example: Registry = {
       () => import("@/registry/components/example/snap-rating-input-demo"),
     ),
   },
+  "snap-address-input-demo": {
+    name: "snap-address-input-demo",
+    type: "components:example",
+    registryDependencies: [],
+    files: ["registry/components/example/snap-address-input-demo.tsx"],
+    component: React.lazy(
+      () => import("@/registry/components/example/snap-address-input-demo"),
+    ),
+  },
   "snap-textarea-demo": {
     name: "snap-textarea-demo",
     type: "components:example",
@@ -172,9 +196,19 @@ const example: Registry = {
   },
 };
 
+const hooks: Registry = {
+  "snap-use-country": {
+    name: "snap-use-country",
+    type: "components:hooks",
+    dependencies: ["libphonenumber-js", "country-flag-icons"],
+    files: ["registry/components/hooks/use-country.ts"],
+  },
+};
+
 export const registry: Registry = {
   ...ui,
   ...example,
+  ...hooks,
 };
 
 const resolvedExamples = Object.entries(example).map(([key, value]) => ({
@@ -187,6 +221,10 @@ const updatedExample: Registry = resolvedExamples.reduce(
   {},
 );
 
-export const downloadRegistry: Registry = { ...ui, ...updatedExample };
+export const downloadRegistry: Registry = {
+  ...ui,
+  ...updatedExample,
+  ...hooks,
+};
 
-export type ComponentName = keyof (typeof ui & typeof example);
+export type ComponentName = keyof (typeof ui & typeof example & typeof hooks);

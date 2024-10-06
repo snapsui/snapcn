@@ -12,6 +12,7 @@ export const registrySchema = z.record(
       "components:snapui",
       "components:widgets",
       "components:component",
+      "components:hooks",
       "components:example",
       "components:blocks",
     ]),

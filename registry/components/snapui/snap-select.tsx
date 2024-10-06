@@ -14,7 +14,7 @@ const SelectValue = SelectPrimitive.Value;
 export const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> & {
-    leftIcon: React.ReactNode;
+    leftIcon?: React.ReactNode;
     selectedIcon?: React.ReactNode;
   }
 >(({ className, children, leftIcon, selectedIcon, ...props }, ref) => {
@@ -33,7 +33,7 @@ export const SelectTrigger = React.forwardRef<
         ) : (
           leftIcon && <span>{leftIcon}</span>
         )}
-        {children}
+        {children && <span className="line-clamp-1 text-left">{children}</span>}
       </div>
       <SelectPrimitive.Icon asChild>
         <ChevronsUpDown className="size-3 opacity-50" />

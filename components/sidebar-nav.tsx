@@ -133,7 +133,7 @@ export function DocsSidebarNavItems({
             key={index}
             href={item.href}
             className={cn(
-              "group relative flex w-full items-center py-1.5",
+              "group relative flex w-full items-center py-1",
               item.disabled && "cursor-not-allowed opacity-60",
               pathname === item.href
                 ? "font-medium text-foreground"
@@ -145,7 +145,7 @@ export function DocsSidebarNavItems({
             <div
               className={cn("absolute -left-6 top-1/2 h-[2px] w-5 bg-border")}
             />
-            <span className="relative z-10 text-base">{item.title}</span>
+            <span className="relative z-10 text-md">{item.title}</span>
             {item.label && (
               <span className="z-10 ml-2 text-sm text-muted-foreground">
                 · {item.label}

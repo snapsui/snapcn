@@ -8,16 +8,11 @@ import { cn } from "@/lib/utils";
 
 import "react-phone-number-input/style.css";
 
-import { hasFlag } from "country-flag-icons";
-import {
-  CountryCallingCode,
-  E164Number,
-  getCountries,
-  getCountryCallingCode,
-} from "libphonenumber-js";
+import { CountryCallingCode, E164Number } from "libphonenumber-js";
 import { EarthIcon, SearchIcon } from "lucide-react";
 import PhoneInput from "react-phone-number-input";
 
+import { useCountries } from "../hooks/use-country";
 import { Input, SnapInput } from "./snap-input";
 import { SelectContent, SelectItem, SelectTrigger } from "./snap-select";
 
@@ -38,37 +33,6 @@ const PhoneInputComponent = React.forwardRef<
     />
   );
 });
-
-const useCountries = () => {
-  return React.useMemo(() => {
-    const regionNamesInEnglish = new Intl.DisplayNames(["en"], {
-      type: "region",
-    });
-    const countryCodes = getCountries();
-
-    return countryCodes.reduce(
-      (result, countryCode) => {
-        const countryName = regionNamesInEnglish.of(countryCode);
-        if (!countryName || !hasFlag(countryCode)) return result;
-
-        result.push({
-          countryCode,
-          countryName,
-          callingCode: getCountryCallingCode(countryCode),
-          Flag: Flags[countryCode],
-        });
-
-        return result;
-      },
-      [] as Array<{
-        countryCode: string;
-        countryName: string;
-        callingCode: CountryCallingCode;
-        Flag: Flags.FlagComponent;
-      }>,
-    );
-  }, []);
-};
 
 interface Country {
   countryCode: string;
@@ -167,8 +131,6 @@ export interface PhoneInputProps
 
 const SnapPhoneInput = React.forwardRef<HTMLInputElement, PhoneInputProps>(
   ({ className, placeholder, value, onChange, autoFocus, ...props }, ref) => {
-    const inputRef = React.useRef<HTMLInputElement>(null);
-
     const handleCountrySelect = React.useCallback(() => {
       if (ref && "current" in ref && ref.current) {
         ref.current.focus();

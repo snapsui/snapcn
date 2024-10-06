@@ -96,7 +96,7 @@ const CurrencyPickerDropdownButton = ({
         selectedIcon={
           selectedCurrency && (
             <img
-              className="size-4 rounded-full object-cover"
+              className="size-4 rounded-full object-cover max-w-unset"
               src={selectedCurrency.icon}
               alt={selectedCurrency.name}
             />
