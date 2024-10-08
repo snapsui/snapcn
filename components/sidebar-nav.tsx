@@ -147,8 +147,8 @@ export function DocsSidebarNavItems({
             />
             <span className="relative z-10 text-md">{item.title}</span>
             {item.label && (
-              <span className="z-10 ml-2 text-sm text-muted-foreground">
-                · {item.label}
+              <span className="z-10 ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000]">
+                {item.label}
               </span>
             )}
             {item.external && (
@@ -159,15 +159,15 @@ export function DocsSidebarNavItems({
           <span
             key={index}
             className={cn(
-              "group relative flex w-full items-center py-1.5 text-muted-foreground",
+              "group relative flex w-full items-center py-1 text-muted-foreground",
               item.disabled && "cursor-not-allowed opacity-60",
             )}
           >
             <div className="absolute -left-4 top-1/2 h-[2px] w-4 bg-border" />
-            <span className="relative z-10 text-base">{item.title}</span>
+            <span className="relative z-10 text-md">{item.title}</span>
             {item.label && (
-              <span className="z-10 ml-2 text-sm text-muted-foreground">
-                · {item.label}
+              <span className="z-10 ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000]">
+                {item.label}
               </span>
             )}
           </span>

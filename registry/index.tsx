@@ -32,13 +32,6 @@ const ui: Registry = {
     ],
     files: ["registry/components/snapui/snap-phone-input.tsx"],
   },
-  "snap-boolean-input": {
-    name: "snap-boolean-input",
-    type: "components:snapui",
-    dependencies: ["@radix-ui/react-slot", "class-variance-authority"],
-    registryDependencies: ["snapcn:snap-button"],
-    files: ["registry/components/snapui/snap-boolean-input.tsx"],
-  },
   "snap-rating-input": {
     name: "snap-rating-input",
     type: "components:snapui",
@@ -129,15 +122,6 @@ const example: Registry = {
     files: ["registry/components/example/snap-phone-input-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/snap-phone-input-demo"),
-    ),
-  },
-  "snap-boolean-input-demo": {
-    name: "snap-boolean-input-demo",
-    type: "components:example",
-    registryDependencies: [],
-    files: ["registry/components/example/snap-boolean-input-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/snap-boolean-input-demo"),
     ),
   },
   "snap-rating-input-demo": {

@@ -71,12 +71,6 @@ export const docsConfig: DocsConfig = {
           label: "",
         },
         {
-          title: "Boolean Input",
-          href: `/docs/snapui/snap-boolean-input`,
-          items: [],
-          label: "",
-        },
-        {
           title: "Rating Input",
           href: `/docs/snapui/snap-rating-input`,
           items: [],
@@ -105,6 +99,20 @@ export const docsConfig: DocsConfig = {
           href: `/docs/snapui/snap-button`,
           items: [],
           label: "",
+        },
+        {
+          title: "Switch Tab",
+          href: `/docs/snapui/snap-switch-tab`,
+          items: [],
+          label: "soon",
+          disabled: true,
+        },
+        {
+          title: "Tooltip",
+          href: `/docs/snapui/snap-tooltip`,
+          items: [],
+          label: "soon",
+          disabled: true,
         },
       ],
     },
