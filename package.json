@@ -1,6 +1,6 @@
 {
   "name": "snapui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "scripts": {
     "prefix:cli": "pnpm --prefix ./packages/cli/ -- ",
