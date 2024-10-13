@@ -6,7 +6,7 @@ import { ChevronsUpDown, SearchIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-import { SnapInput } from "./snap-input";
+import { SnapInput } from "./input";
 
 const Select = SelectPrimitive.Root;
 const SelectValue = SelectPrimitive.Value;

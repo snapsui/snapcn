@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { EarthIcon } from "lucide-react";
 
-import { SnapSelect } from "@/components/snapui/snap-select";
+import { SnapSelect } from "@/components/snapui/select";
 
 export default function SnapSelectDemo() {
   const [country, setCountry] = useState("");

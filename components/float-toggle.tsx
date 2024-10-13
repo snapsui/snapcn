@@ -31,7 +31,6 @@ export const FloatToggle = React.forwardRef<
         transition={{ duration: 0.3, ease: "easeOut" }}
         className="bg-transparent w-16 rounded-full relative"
         onHoverStart={() => setIsExpanded(true)}
-        onClick={(isExpanded) => setIsExpanded(!isExpanded)}
         onHoverEnd={() => setIsExpanded(false)}
       >
         <motion.div

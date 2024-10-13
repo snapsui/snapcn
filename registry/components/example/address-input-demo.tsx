@@ -7,8 +7,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { SnapAddressInput } from "@/components/snapui/snap-address-input";
-import { SnapButton } from "@/components/snapui/snap-button";
+import { SnapAddressInput } from "@/components/snapui/address-input";
+import { SnapButton } from "@/registry/components/snapui/button";
 
 type AddressValue = {
   addressStreet1: string;

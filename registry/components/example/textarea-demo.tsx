@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { SnapTextarea } from "@/components/snapui/snap-textarea";
+import { SnapTextarea } from "@/registry/components/snapui/textarea";
 
 export default function SnapTextareaDemo() {
   const [value, setValue] = useState("");

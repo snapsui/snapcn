@@ -1,4 +1,4 @@
-import { SnapURLInput } from "@/components/snapui/snap-url-input";
+import { SnapURLInput } from "@/components/snapui/url-input";
 
 export default function SnapURLInputDemo() {
   return (

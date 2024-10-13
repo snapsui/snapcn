@@ -1,6 +1,6 @@
 import { Clipboard, Loader, X } from "lucide-react";
 
-import { SnapButton } from "@/components/snapui/snap-button";
+import { SnapButton } from "@/registry/components/snapui/button";
 
 export default function SnapButtonDemo() {
   return (

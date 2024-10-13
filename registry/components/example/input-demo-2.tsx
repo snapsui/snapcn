@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Cross1Icon, PersonIcon } from "@radix-ui/react-icons";
 
-import { SnapInput } from "@/components/snapui/snap-input";
+import { SnapInput } from "@/components/snapui/input";
 
 export default function SnapInputDemo() {
   const [name, setName] = useState("");

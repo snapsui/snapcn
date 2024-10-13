@@ -13,8 +13,8 @@ import { EarthIcon, SearchIcon } from "lucide-react";
 import PhoneInput from "react-phone-number-input";
 
 import { useCountries } from "../hooks/use-country";
-import { Input, SnapInput } from "./snap-input";
-import { SelectContent, SelectItem, SelectTrigger } from "./snap-select";
+import { Input, SnapInput } from "./input";
+import { SelectContent, SelectItem, SelectTrigger } from "./select";
 
 const Select = SelectPrimitive.Root;
 

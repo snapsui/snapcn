@@ -7,8 +7,8 @@ import { SearchIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 import { useCountries } from "../hooks/use-country";
-import { SnapInput } from "./snap-input";
-import { SelectContent, SelectItem, SelectTrigger } from "./snap-select";
+import { SnapInput } from "./input";
+import { SelectContent, SelectItem, SelectTrigger } from "./select";
 
 const Select = SelectPrimitive.Root;
 const SelectValue = SelectPrimitive.Value;

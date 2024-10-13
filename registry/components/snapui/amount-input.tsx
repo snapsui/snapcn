@@ -6,8 +6,8 @@ import { CurrencyIcon, SearchIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-import { Input, SnapInput } from "./snap-input";
-import { SelectContent, SelectItem, SelectTrigger } from "./snap-select";
+import { Input, SnapInput } from "./input";
+import { SelectContent, SelectItem, SelectTrigger } from "./select";
 
 const Select = SelectPrimitive.Root;
 

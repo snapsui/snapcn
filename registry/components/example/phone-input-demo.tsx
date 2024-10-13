@@ -1,7 +1,7 @@
 import React from "react";
 import { E164Number } from "libphonenumber-js";
 
-import { SnapPhoneInput } from "@/components/snapui/snap-phone-input";
+import { SnapPhoneInput } from "@/components/snapui/phone-input";
 
 export default function SnapPhoneInputDemo() {
   const [value, setValue] = React.useState<string>("");
