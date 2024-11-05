@@ -61,11 +61,7 @@ export default function SnapAddressInputDemo() {
         </SnapButton>
       </PopoverTrigger>
       <PopoverContent align="start" className="w-[400px] p-2.5">
-        <SnapAddressInput
-          value={address}
-          onChange={setAddress}
-          onBlur={() => console.log("Address input blurred")}
-        />
+        <SnapAddressInput value={address} onChange={setAddress} />
       </PopoverContent>
     </Popover>
   );

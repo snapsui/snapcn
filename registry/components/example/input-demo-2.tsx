@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Cross1Icon, PersonIcon } from "@radix-ui/react-icons";
 

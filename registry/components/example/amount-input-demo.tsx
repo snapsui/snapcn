@@ -3,7 +3,7 @@ import React from "react";
 import { SnapAmountInput } from "@/components/snapui/amount-input";
 
 export default function SnapAmountInputDemo() {
-  const [currency, setCurrency] = React.useState("");
+  const [currency, setCurrency] = React.useState("USD");
   const [amount, setAmount] = React.useState("");
   return (
     <SnapAmountInput

@@ -1,6 +1,6 @@
 {
   "name": "snapui",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": true,
   "scripts": {
     "prefix:cli": "pnpm --prefix ./packages/cli/ -- ",
@@ -36,6 +36,8 @@
     "@radix-ui/react-switch": "^1.0.3",
     "@radix-ui/react-tabs": "^1.1.0",
     "@radix-ui/react-toast": "^1.2.1",
+    "@radix-ui/react-toggle": "^1.1.0",
+    "@radix-ui/react-toggle-group": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.2",
     "@t3-oss/env-nextjs": "^0.7.1",
     "autoprefixer": "10.4.14",
@@ -67,9 +69,11 @@
     "react-hook-form": "^7.45.0",
     "react-icon-cloud": "^4.1.4",
     "react-phone-number-input": "^3.4.8",
+    "react-resizable-panels": "^2.1.4",
     "schema-dts": "^1.1.2",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.4.0",
+    "ts-morph": "^24.0.0",
     "turbo": "^2.0.6",
     "zod": "^3.23.8"
   },

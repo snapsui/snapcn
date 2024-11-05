@@ -11,19 +11,19 @@ const ui: Registry = {
   "snap-amount-input": {
     name: "snap-amount-input",
     type: "components:snapui",
-    registryDependencies: ["snapcn:snap-input", "snapcn:snap-select"],
+    registryDependencies: ["snap-input", "snap-select"],
     files: ["registry/components/snapui/amount-input.tsx"],
   },
   "snap-url-input": {
     name: "snap-url-input",
     type: "components:snapui",
-    registryDependencies: ["snapcn:snap-input"],
+    registryDependencies: ["snap-input"],
     files: ["registry/components/snapui/url-input.tsx"],
   },
   "snap-phone-input": {
     name: "snap-phone-input",
     type: "components:snapui",
-    registryDependencies: ["snapcn:snap-input", "snapcn:snap-select"],
+    registryDependencies: ["snap-input", "snap-select"],
     dependencies: [
       "@radix-ui/react-select",
       "country-flag-icons",
@@ -46,29 +46,24 @@ const ui: Registry = {
       "country-flag-icons",
       "libphonenumber-js",
     ],
-    registryDependencies: [
-      "snapcn:snap-input",
-      "snapcn:snap-select",
-      "snapcn:use-country",
-    ],
+    registryDependencies: ["snap-input", "snap-select", "use-country"],
     files: ["registry/components/snapui/address-input.tsx"],
-  },
-  "snap-textarea": {
-    name: "snap-textarea",
-    type: "components:snapui",
-    files: ["registry/components/snapui/textarea.tsx"],
   },
   "snap-select": {
     name: "snap-select",
     type: "components:snapui",
     dependencies: ["@radix-ui/react-select"],
-    registryDependencies: ["snapcn:snap-input"],
+    registryDependencies: ["snap-input"],
     files: ["registry/components/snapui/select.tsx"],
   },
   "snap-button": {
     name: "snap-button",
     type: "components:snapui",
-    dependencies: ["@radix-ui/react-slot", "class-variance-authority"],
+    dependencies: [
+      "@radix-ui/react-slot",
+      "class-variance-authority",
+      "framer-motion",
+    ],
     files: ["registry/components/snapui/button.tsx"],
   },
   "snap-float-button": {
@@ -76,9 +71,22 @@ const ui: Registry = {
     type: "components:widgets",
     files: ["registry/components/widgets/float-button.tsx"],
   },
+  "snap-pulse-spin-button": {
+    name: "snap-pulse-spin-button",
+    type: "components:widgets",
+    files: ["registry/components/widgets/pulse-spin-button.tsx"],
+  },
 };
 
 const example: Registry = {
+  "snap-name-footer": {
+    name: "snap-name-footer",
+    type: "components:blocks",
+    files: ["registry/components/blocks/name-footer.tsx"],
+    component: React.lazy(
+      () => import("@/registry/components/blocks/name-footer"),
+    ),
+  },
   "snap-input-demo-1": {
     name: "snap-input-demo-1",
     type: "components:example",
@@ -142,15 +150,6 @@ const example: Registry = {
       () => import("@/registry/components/example/address-input-demo"),
     ),
   },
-  "snap-textarea-demo": {
-    name: "snap-textarea-demo",
-    type: "components:example",
-    registryDependencies: [],
-    files: ["registry/components/example/textarea-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/textarea-demo"),
-    ),
-  },
   "snap-select-demo": {
     name: "snap-select-demo",
     type: "components:example",
@@ -176,6 +175,15 @@ const example: Registry = {
     files: ["registry/components/example/float-button-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/float-button-demo"),
+    ),
+  },
+  "snap-pulse-spin-button-demo": {
+    name: "snap-pulse-spin-button-demo",
+    type: "components:example",
+    registryDependencies: [],
+    files: ["registry/components/example/pulse-spin-button-demo.tsx"],
+    component: React.lazy(
+      () => import("@/registry/components/example/pulse-spin-button-demo"),
     ),
   },
 };

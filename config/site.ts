@@ -10,6 +10,7 @@ export const siteConfig = {
     github: "https://github.com/snapsui/snapcn",
     calcom: "https://cal.com/jeet1desai/snapui",
     instagram: "",
+    email: "jeetdesai149@gmail.com",
   },
   keywords: [
     "React",

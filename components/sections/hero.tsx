@@ -112,7 +112,7 @@ export default async function Hero() {
                     </span>
                   </Link>
                   <Link
-                    href={siteConfig.links.calcom}
+                    href={"mailto:" + siteConfig.links.email}
                     className={cn(
                       buttonVariants({
                         size: "lg",

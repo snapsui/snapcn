@@ -89,7 +89,7 @@ export default async function DocPage({ params }: DocPageProps) {
   return (
     <main
       className={cn("relative py-6 lg:gap-10 lg:py-8 xl:grid ", {
-        "xl:grid-cols-[1fr_300px]": doc.toc,
+        "xl:grid-cols-[1fr_300px]": doc.toc && !doc.slug.includes("blocks"),
       })}
     >
       <div className="mx-auto w-full min-w-0">
@@ -139,7 +139,7 @@ export default async function DocPage({ params }: DocPageProps) {
         </div>
         <DocPager doc={doc} />
       </div>
-      {doc.toc && (
+      {doc.toc && !doc.slug.includes("blocks") && (
         <div className="hidden text-sm xl:block">
           <div className="sticky top-16 -mt-10 pt-4">
             <ScrollArea className="pb-10">

@@ -24,6 +24,7 @@
       "@/*": ["./*"],
       "@/components/snapui/*": ["./registry/components/snapui/*"],
       "@/components/widgets/*": ["./registry/components/widgets/*"],
+      "@/components/blocks/*": ["./registry/components/blocks/*"],
       "@/components/example/*": ["./registry/components/example/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     }

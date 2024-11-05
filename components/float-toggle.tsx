@@ -24,7 +24,7 @@ export const FloatToggle = React.forwardRef<
   const [isExpanded, setIsExpanded] = React.useState(false);
 
   return (
-    <div className="fixed right-4 bottom-4 text-center overflow-hidden">
+    <div className="fixed right-4 bottom-4 text-center overflow-hidden z-[999]">
       <motion.div
         initial={{ height: "3rem" }}
         animate={{ height: isExpanded ? "21.5rem" : "3rem" }}

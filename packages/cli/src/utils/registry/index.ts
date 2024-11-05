@@ -136,7 +136,7 @@ export async function resolveTreeWithShadcn(
         } = await resolveTreeWithShadcn(
           shadcnIndex,
           index,
-          entry.registryDependencies,
+          entry.registryDependencies.map((e) => e.split(":")[1]),
           false,
         );
         shadcnTree.push(...shadcnTreeDependencies);
