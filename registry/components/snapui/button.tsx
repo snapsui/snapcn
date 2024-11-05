@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
+import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
@@ -84,16 +85,26 @@ export interface ButtonProps
   asChild?: boolean;
   shape?: "default" | "square" | "pill";
   color?: ButtonColor;
+  isAnimated?: boolean;
 }
 
 const SnapButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { className, variant, size, color, shape, asChild = false, ...props },
+    {
+      className,
+      variant,
+      size,
+      color,
+      shape,
+      asChild = false,
+      isAnimated = false,
+      ...props
+    },
     ref,
   ) => {
     const Comp = asChild ? Slot : "button";
 
-    return (
+    const buttonContent = (
       <Comp
         className={cn(
           snapButtonVariants({ variant, size, shape }),
@@ -104,6 +115,20 @@ const SnapButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       />
     );
+
+    if (isAnimated) {
+      return (
+        <motion.div
+          className="cursor-pointer"
+          whileHover={{ scale: 1.01 }}
+          whileTap={{ scale: 0.92 }}
+        >
+          {buttonContent}
+        </motion.div>
+      );
+    }
+
+    return buttonContent;
   },
 );
 SnapButton.displayName = "Button";

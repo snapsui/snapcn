@@ -6,62 +6,74 @@ export default function SnapButtonDemo() {
   return (
     <div className="flex gap-8 flex-col flex-wrap justify-center">
       <div className="flex gap-8">
-        <SnapButton>Default</SnapButton>
-        <SnapButton variant="outline">Outline</SnapButton>
-        <SnapButton variant="soft">Lighter</SnapButton>
-        <SnapButton variant="ghost">Ghost</SnapButton>
-        <SnapButton variant="link">Link</SnapButton>
-      </div>
-      <div className="flex gap-8">
-        <SnapButton color="error">Default</SnapButton>
-        <SnapButton variant="outline" color="error">
+        <SnapButton isAnimated>Default</SnapButton>
+        <SnapButton isAnimated variant="outline">
           Outline
         </SnapButton>
-        <SnapButton variant="soft" color="error">
+        <SnapButton isAnimated variant="soft">
           Lighter
         </SnapButton>
-        <SnapButton variant="ghost" color="error">
+        <SnapButton isAnimated variant="ghost">
           Ghost
         </SnapButton>
-        <SnapButton variant="link" color="error">
+        <SnapButton isAnimated variant="link">
           Link
         </SnapButton>
       </div>
       <div className="flex gap-8">
-        <SnapButton size="icon">
+        <SnapButton isAnimated color="error">
+          Default
+        </SnapButton>
+        <SnapButton isAnimated variant="outline" color="error">
+          Outline
+        </SnapButton>
+        <SnapButton isAnimated variant="soft" color="error">
+          Lighter
+        </SnapButton>
+        <SnapButton isAnimated variant="ghost" color="error">
+          Ghost
+        </SnapButton>
+        <SnapButton isAnimated variant="link" color="error">
+          Link
+        </SnapButton>
+      </div>
+      <div className="flex gap-8">
+        <SnapButton isAnimated size="icon">
           <Clipboard className="size-4" />
         </SnapButton>
-        <SnapButton variant="outline" size="icon" shape="pill">
+        <SnapButton isAnimated variant="outline" size="icon" shape="pill">
           <X className="size-4" />
         </SnapButton>
-        <SnapButton variant="soft" size="icon">
+        <SnapButton isAnimated variant="soft" size="icon">
           <Clipboard className="size-4" />
         </SnapButton>
-        <SnapButton variant="ghost" size="icon">
+        <SnapButton isAnimated variant="ghost" size="icon">
           <Clipboard className="size-4" />
         </SnapButton>
       </div>
       <div className="flex gap-8">
-        <SnapButton size="sm">Default</SnapButton>
-        <SnapButton variant="outline" size="sm" shape="square">
+        <SnapButton isAnimated size="sm">
+          Default
+        </SnapButton>
+        <SnapButton isAnimated variant="outline" size="sm" shape="square">
           Outline
         </SnapButton>
-        <SnapButton variant="soft" size="sm" shape="pill">
+        <SnapButton isAnimated variant="soft" size="sm" shape="pill">
           Lighter
         </SnapButton>
-        <SnapButton variant="ghost" size="sm">
+        <SnapButton isAnimated variant="ghost" size="sm">
           Ghost
         </SnapButton>
-        <SnapButton variant="link" size="sm">
+        <SnapButton isAnimated variant="link" size="sm">
           Link
         </SnapButton>
       </div>
       <div className="flex gap-8">
-        <SnapButton disabled>
+        <SnapButton isAnimated disabled>
           <Loader className="size-4 animate-spin" />
           Default
         </SnapButton>
-        <SnapButton variant="outline">
+        <SnapButton isAnimated variant="outline">
           <Clipboard className="size-4" /> Outline
         </SnapButton>
       </div>
