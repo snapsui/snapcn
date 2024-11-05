@@ -104,6 +104,9 @@ export async function getProjectConfig(cwd: string): Promise<Config | null> {
       components: `${tsConfigAliasPrefix}/components`,
       snapui: `${tsConfigAliasPrefix}/components/snapui`,
       ui: `${tsConfigAliasPrefix}/components/ui`,
+      hooks: `${tsConfigAliasPrefix}/components/hooks`,
+      widgets: `${tsConfigAliasPrefix}/components/widgets`,
+      blocks: `${tsConfigAliasPrefix}/components/blocks`,
     },
   };
 

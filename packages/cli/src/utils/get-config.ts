@@ -37,6 +37,9 @@ export const rawConfigSchema = z
       utils: z.string(),
       ui: z.string().optional(),
       snapui: z.string().optional(),
+      hooks: z.string().optional(),
+      widgets: z.string().optional(),
+      blocks: z.string().optional(),
     }),
   })
   .strict();
@@ -51,6 +54,9 @@ export const configSchema = rawConfigSchema.extend({
     components: z.string(),
     ui: z.string(),
     snapui: z.string(),
+    hooks: z.string(),
+    widgets: z.string(),
+    blocks: z.string(),
   }),
 });
 
@@ -83,10 +89,15 @@ export async function resolveConfigPaths(cwd: string, config: RawConfig) {
   );
   const ui = `${components}/ui`;
   const snapui = `${components}/snapui`;
-
+  const hooks = `${components}/hooks`;
+  const widgets = `${components}/widgets`;
+  const blocks = `${components}/blocks`;
   const newAliases = {
     ui: `${config.aliases.components}/ui`,
     snapui: `${config.aliases.components}/snapui`,
+    hooks: `${config.aliases.components}/hooks`,
+    widgets: `${config.aliases.components}/widgets`,
+    blocks: `${config.aliases.components}/blocks`,
   };
 
   const newConfig = {
@@ -104,9 +115,12 @@ export async function resolveConfigPaths(cwd: string, config: RawConfig) {
       //   ? await resolveImport(config.aliases["ui"], tsConfig)
       //   : await resolveImport(config.aliases["components"], tsConfig),
       snapui,
+      hooks,
+      widgets,
       //   ? await resolveImport(config.aliases["snapui"], tsConfig)
       //   : config.aliases["ui"] ? await resolveImport(config.aliases["ui"], tsConfig)
       //     : await resolveImport(config.aliases["components"], tsConfig)
+      blocks,
     },
   };
   return configSchema.parse(newConfig);

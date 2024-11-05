@@ -15,6 +15,8 @@ import { Callout } from "@/components/callout";
 import RepoDownload from "@/components/repo-download";
 import TemplatePreview from "@/components/template-preview";
 
+import { BlockCodePreview } from "./block-code-preview";
+import { BlockPreview } from "./block-preview";
 import { ComponentInstallation } from "./component-installation";
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
@@ -48,6 +50,8 @@ const components = {
   Image,
   Callout,
   ComponentPreview,
+  BlockPreview,
+  BlockCodePreview,
   ComponentSource: (props: any) => <ComponentSource {...props} />,
   ComponentInstallation: (props: any) => <ComponentInstallation {...props} />,
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
