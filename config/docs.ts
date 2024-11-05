@@ -15,6 +15,12 @@ export const docsConfig: DocsConfig = {
       title: "Components",
       href: "/components",
     },
+    {
+      title: "Mobile",
+      href: "/mobile",
+      label: "soon",
+      disabled: true,
+    },
   ],
   sidebarNav: [
     {
@@ -83,12 +89,6 @@ export const docsConfig: DocsConfig = {
           label: "",
         },
         {
-          title: "TextArea",
-          href: `/docs/snapui/snap-textarea`,
-          items: [],
-          label: "",
-        },
-        {
           title: "Select",
           href: `/docs/snapui/snap-select`,
           items: [],
@@ -114,16 +114,47 @@ export const docsConfig: DocsConfig = {
           label: "soon",
           disabled: true,
         },
+        {
+          title: "File Upload",
+          href: `/docs/snapui/snap-tooltip`,
+          items: [],
+          label: "soon",
+          disabled: true,
+        },
+        {
+          title: "Slider",
+          href: `/docs/snapui/snap-tooltip`,
+          items: [],
+          label: "soon",
+          disabled: true,
+        },
       ],
     },
     {
       title: "Components",
       items: [
         {
+          title: "Pulse Spin Button",
+          href: `/docs/components/snap-pulse-spin-button`,
+          items: [],
+          label: "New",
+        },
+        {
           title: "Float Button",
           href: `/docs/components/snap-float-button`,
           items: [],
           label: "",
+        },
+      ],
+    },
+    {
+      title: "Blocks",
+      items: [
+        {
+          title: "Name Footer",
+          href: `/docs/blocks/snap-name-footer`,
+          items: [],
+          label: "New",
         },
       ],
     },

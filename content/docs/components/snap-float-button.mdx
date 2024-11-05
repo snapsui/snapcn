@@ -32,7 +32,18 @@ npx snapcn add snap-float-button
 <Step>Install dependency.</Step>
 
 ```bash
-npm install framer-motion
+npm install framer-motion clsx tailwind-merge
+```
+
+<Step>Add util file.</Step>
+
+```typescript
+import clsx, { ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
